@@ -9,7 +9,6 @@ export const metadata: Metadata = {
 };
 
 const options = [
-  { icon: UserPlus, title: "Register Now", desc: "Individual, family, group, or institutional registration for the Mega Mahotsav.", href: "/participate/register", highlight: true },
   { icon: Globe, title: "Global Participation", desc: "Join from your country — participate in the 18-nation chapter journey.", href: "/participate/global" },
   { icon: Building2, title: "Institution Participation", desc: "Register your school, university, or organisation as a participant.", href: "/participate/institution" },
   { icon: Zap, title: "Youth Participation", desc: "Special registration for ages 15–35 with dedicated Youth Gita programme.", href: "/participate/youth" },

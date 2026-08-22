@@ -8,13 +8,6 @@ import { useJoinModal } from "@/lib/useJoinModal";
 
 const paths = [
   {
-    icon: Users,
-    title: "Attend",
-    desc: "Register as an individual, family, or group to attend the Mahotsav on 27 Feb 2027.",
-    href: "/participate/register",
-    cta: "Register Now",
-  },
-  {
     icon: Globe,
     title: "Participate Globally",
     desc: "Join from your country — co-ordinate a local Gita event as part of the 18-country journey.",

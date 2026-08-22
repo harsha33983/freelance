@@ -71,12 +71,12 @@ export const navGroups: NavGroup[] = [
     label: "Participate",
     href: "/participate",
     children: [
-      
       { label: "Global Participation", href: "/participate/global" },
       { label: "Institution Participation", href: "/participate/institution" },
       { label: "Youth Participation", href: "/participate/youth" },
       { label: "Volunteer", href: "/participate/volunteer" },
       { label: "Gita Parayana", href: "/participate/host-parayana" },
+      { label: "Donor", href: "/participate/donor" },
       
     ],
   },
