@@ -1,4 +1,5 @@
-import { NextRequest, NextResponse } from "next/server";
+﻿const fs = require('fs');
+const content = `import { NextRequest, NextResponse } from "next/server";
 import { requireAdmin } from "@/lib/auth";
 import { neon } from "@neondatabase/serverless";
 import { z } from "zod";
@@ -20,11 +21,11 @@ export async function POST(req: NextRequest) {
     const sql = neon(process.env.DATABASE_URL!);
     const id = crypto.randomUUID();
     
-    const items = await sql`
+    const items = await sql\`
       INSERT INTO "GalleryItem" (id, "imageUrl", category, caption, "uploadedAt") 
-      VALUES (${id}, ${data.imageUrl}, ${data.category}, ${data.caption}, NOW()) 
+      VALUES (\${id}, \${data.imageUrl}, \${data.category}, \${data.caption}, NOW()) 
       RETURNING *
-    `;
+    \`;
     
     return NextResponse.json(items[0], { status: 201 });
   } catch (err) {
@@ -35,3 +36,5 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ message: "Server error" }, { status: 500 });
   }
 }
+`;
+fs.writeFileSync('C:\\Users\\Harsha\\Music\\bgvm2027\\app\\api\\admin\\gallery\\route.ts', content);

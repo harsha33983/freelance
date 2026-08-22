@@ -1,4 +1,5 @@
-import type { Metadata } from "next";
+﻿const fs = require('fs');
+const content = `import type { Metadata } from "next";
 import PageHero from "@/components/ui/PageHero";
 import GalleryGrid from "@/components/media/GalleryGrid";
 import { neon } from "@neondatabase/serverless";
@@ -14,7 +15,7 @@ export default async function GalleryPage() {
   let items: any[] = [];
   try {
     const sql = neon(process.env.DATABASE_URL!);
-    items = await sql`SELECT * FROM "GalleryItem" ORDER BY "uploadedAt" DESC LIMIT 100`;
+    items = await sql\`SELECT * FROM "GalleryItem" ORDER BY "uploadedAt" DESC LIMIT 100\`;
   } catch (err) {
     console.error("Failed to load gallery items:", err);
   }
@@ -26,3 +27,5 @@ export default async function GalleryPage() {
     </>
   );
 }
+`;
+fs.writeFileSync('C:\\Users\\Harsha\\Music\\bgvm2027\\app\\media\\gallery\\page.tsx', content);
