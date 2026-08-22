@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --gold: #C9A227;
+    --gold-light: #D4AF37;
+    --gold-dark: #B8860B;
+    --cream: #FAF8F3;
+    --ink: #111111;
+    --ink-body: #2B2B2B;
+    --footer-bg: #0A0A0A;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply font-sans text-ink-body bg-white antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif text-ink;
+  }
+}
+
+@layer components {
+  /* Gold divider rule */
+  .gold-rule {
+    @apply w-16 h-[2px] bg-gold mx-auto;
+  }
+
+  .gold-rule-left {
+    @apply w-16 h-[2px] bg-gold;
+  }
+
+  /* Section padding */
+  .section-pad {
+    @apply py-16 md:py-24;
+  }
+
+  .section-pad-sm {
+    @apply py-10 md:py-16;
+  }
+
+  /* Container */
+  .container-main {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Section heading */
+  .section-heading {
+    @apply font-serif text-3xl md:text-4xl lg:text-5xl font-semibold text-ink leading-tight;
+  }
+
+  .section-subheading {
+    @apply font-serif text-xl md:text-2xl font-medium text-ink;
+  }
+
+  /* Gold badge */
+  .gold-badge {
+    @apply inline-flex items-center gap-2 px-4 py-1.5 border border-gold text-gold text-xs font-sans font-semibold tracking-widest uppercase rounded-sm;
+  }
+
+  /* Buttons */
+  .btn-gold {
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-gold text-ink font-sans font-semibold text-sm tracking-widest uppercase rounded-sm transition-all duration-300 hover:bg-ink hover:text-gold hover:shadow-gold;
+  }
+
+  .btn-outline-gold {
+    @apply inline-flex items-center gap-2 px-6 py-3 border-2 border-gold text-gold font-sans font-semibold text-sm tracking-widest uppercase rounded-sm transition-all duration-300 hover:bg-gold hover:text-ink;
+  }
+
+  .btn-dark {
+    @apply inline-flex items-center gap-2 px-6 py-3 bg-ink text-gold font-sans font-semibold text-sm tracking-widest uppercase rounded-sm transition-all duration-300 hover:bg-gold hover:text-ink;
+  }
+
+  /* Cards */
+  .card-base {
+    @apply bg-white border border-gray-100 rounded-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-gold;
+  }
+
+  .card-gold-top {
+    @apply card-base border-t-2 border-t-gold;
+  }
+
+  /* Nav link gold underline */
+  .nav-link {
+    @apply relative text-ink font-sans font-medium text-sm tracking-wide transition-colors duration-200 hover:text-gold;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-[2px] bg-gold transition-all duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  /* Decorative Om glyph divider */
+  .section-divider {
+    @apply flex items-center gap-4 justify-center;
+  }
+
+  .section-divider::before,
+  .section-divider::after {
+    content: '';
+    @apply flex-1 h-[1px] bg-gold opacity-40;
+  }
+
+  /* Gold text */
+  .text-gold-accent {
+    @apply text-gold font-semibold;
+  }
+
+  /* Prose body text */
+  .prose-gold h2 {
+    @apply font-serif text-ink;
+  }
+
+  .prose-gold p {
+    @apply text-ink-body leading-relaxed;
+  }
+}
+
+@layer utilities {
+  .animate-marquee {
+    animation: marquee 160s linear infinite;
+  }
+
+  /* Hide scrollbar */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* ── Admin UI utilities ────────────────────────────────────────────────── */
+@layer components {
+  .admin-label {
+    @apply block text-xs font-semibold font-sans text-ink tracking-wider uppercase mb-1.5;
+  }
+
+  .admin-input {
+    @apply w-full border border-gray-200 rounded-sm px-4 py-2.5 text-ink-body text-sm font-sans focus:outline-none focus:border-gold transition-colors;
+  }
+
+  .admin-error {
+    @apply text-red-500 text-xs mt-1 font-sans;
+  }
+}

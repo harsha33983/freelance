@@ -1,0 +1,150 @@
+// Prisma schema for Bhagavad Gita Vishwa Mahotsav 2027
+// Database: PostgreSQL (Neon / Supabase / Railway)
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ── Registrations ─────────────────────────────────────────────────────────
+model Registration {
+  id        String   @id @default(cuid())
+  type      RegistrationType
+  name      String
+  email     String
+  phone     String
+  country   String
+  city      String
+  createdAt DateTime @default(now())
+
+  @@index([email])
+  @@index([type])
+  @@index([country])
+}
+
+enum RegistrationType {
+  individual
+  family
+  group
+  institution
+  youth
+}
+
+// ── Volunteer Applications ────────────────────────────────────────────────
+model VolunteerApplication {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  phone     String
+  area      String
+  city      String
+  country   String
+  message   String?
+  createdAt DateTime @default(now())
+
+  @@index([email])
+}
+
+// ── Parayana Host Requests ────────────────────────────────────────────────
+model ParayanaHostRequest {
+  id                   String   @id @default(cuid())
+  communityName        String
+  contactPerson        String
+  email                String
+  phone                String
+  city                 String
+  country              String
+  expectedParticipants String
+  preferredDate        String?
+  message              String?
+  createdAt            DateTime @default(now())
+
+  @@index([email])
+}
+
+// ── Partnership Proposals ─────────────────────────────────────────────────
+model PartnershipProposal {
+  id            String   @id @default(cuid())
+  orgName       String
+  contactPerson String
+  email         String
+  phone         String
+  interestArea  String
+  message       String
+  createdAt     DateTime @default(now())
+
+  @@index([email])
+}
+
+// ── Contact Messages ──────────────────────────────────────────────────────
+model ContactMessage {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  category  String
+  message   String
+  createdAt DateTime @default(now())
+
+  @@index([email])
+}
+
+// ── Newsletter Subscribers ────────────────────────────────────────────────
+model NewsletterSubscriber {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  subscribedAt DateTime @default(now())
+
+  @@index([email])
+}
+
+// ── News Articles ─────────────────────────────────────────────────────────
+model NewsArticle {
+  id          String    @id @default(cuid())
+  title       String
+  slug        String    @unique
+  category    String    @default("News")
+  excerpt     String
+  body        String    @db.Text
+  coverImage  String?
+  author      String    @default("Mahotsav Team")
+  publishedAt DateTime  @default(now())
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@index([slug])
+  @@index([publishedAt])
+}
+
+// ── Gallery Items ─────────────────────────────────────────────────────────
+model GalleryItem {
+  id         String   @id @default(cuid())
+  imageUrl   String
+  category   String   @default("General")
+  caption    String
+  uploadedAt DateTime @default(now())
+
+  @@index([category])
+}
+
+// ── Press Kit Files ───────────────────────────────────────────────────────
+model PressKitFile {
+  id         String   @id @default(cuid())
+  title      String
+  fileUrl    String
+  fileType   String   @default("pdf")
+  uploadedAt DateTime @default(now())
+}
+
+// ── Admins ────────────────────────────────────────────────────────────────
+model Admin {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  role         String   @default("admin")
+  createdAt    DateTime @default(now())
+
+  @@index([email])
+}
