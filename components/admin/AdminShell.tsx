@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
@@ -19,45 +19,46 @@ const NAV = [
   { href: "/admin/press-kit", label: "Press Kit", icon: Package },
 ];
 
-function useAdminAuth() {
+function useAdminAuth(pathname: string) {
   const [token, setToken] = useState<string | null>(null);
   const [checked, setChecked] = useState(false);
   useEffect(() => {
     const t = localStorage.getItem("bgvm_admin_token");
     setToken(t);
     setChecked(true);
-  }, []);
+  }, [pathname]);
   return { token, checked };
 }
 
 export default function AdminShell({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const router = useRouter();
-  const { token, checked } = useAdminAuth();
+  const { token, checked } = useAdminAuth(pathname);
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const isLoginPage = pathname === "/admin/login" || pathname === "/admin";
 
   useEffect(() => {
     if (!checked) return;
-    if (!token && !isLoginPage) {
+    const currentToken = localStorage.getItem("bgvm_admin_token");
+    if (!currentToken && !isLoginPage) {
       router.replace("/admin/login");
     }
-  }, [checked, token, isLoginPage, router]);
+  }, [checked, pathname, isLoginPage, router]);
 
   const handleLogout = () => {
     localStorage.removeItem("bgvm_admin_token");
     router.replace("/admin/login");
   };
 
-  // On login page — render children without shell
+  // On login page - render children without shell
   if (isLoginPage) return <>{children}</>;
 
   // Not checked yet
-  if (!checked || !token) {
+  if (!checked || (!token && !isLoginPage)) {
     return (
       <div className="min-h-screen bg-cream flex items-center justify-center">
-        <div className="text-gold font-serif text-2xl animate-pulse">Loading…</div>
+        <div className="text-gold font-serif text-2xl animate-pulse">Loading...</div>
       </div>
     );
   }
@@ -145,7 +146,7 @@ export default function AdminShell({ children }: { children: React.ReactNode }) 
             target="_blank"
             className="text-xs text-gold hover:underline font-semibold"
           >
-            View Site →
+            View Site &rarr;
           </Link>
         </header>
 
