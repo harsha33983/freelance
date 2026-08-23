@@ -21,7 +21,9 @@ export default function LiveVisitorCount({ className = "" }: { className?: strin
   useEffect(() => {
     // 1. Get or create Visitor ID
     let visitorId = localStorage.getItem("bgvm_visitor_id");
-    if (!visitorId) {
+    const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+    
+    if (!visitorId || !uuidRegex.test(visitorId)) {
       visitorId = generateUUID();
       localStorage.setItem("bgvm_visitor_id", visitorId);
     }

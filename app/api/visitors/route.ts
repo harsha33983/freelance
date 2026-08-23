@@ -18,6 +18,11 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "visitorId is required" }, { status: 400 });
     }
 
+    const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+    if (!uuidRegex.test(visitorId)) {
+      return NextResponse.json({ error: "Invalid visitorId format" }, { status: 400 });
+    }
+
     const sql = getSql();
 
     // UPSERT the visitor, updating last_active_at
