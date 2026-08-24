@@ -20,19 +20,9 @@ const baseSchema = z.object({
 
 const schemas = {
   individual: baseSchema,
-  family: baseSchema.extend({
-    familyMembersCount: z.coerce.number().min(2, "Minimum 2 members").max(10, "Maximum 10 members"),
-  }),
-  group: baseSchema.extend({
-    groupName: z.string().min(2, "Group name is required"),
-    groupSize: z.coerce.number().min(10, "Minimum 10 members"),
-  }),
   institution: baseSchema.extend({
     institutionName: z.string().min(2, "Institution name is required"),
     designation: z.string().min(2, "Designation is required"),
-  }),
-  yatra: baseSchema.extend({
-    yatraName: z.string().min(2, "Yatra name is required"),
   }),
 };
 
@@ -40,20 +30,13 @@ type RegistrationType = keyof typeof schemas;
 
 // Any type that encompasses all possible fields for the form
 type Step2Data = z.infer<typeof baseSchema> & {
-  familyMembersCount?: number;
-  groupName?: string;
-  groupSize?: number;
   institutionName?: string;
   designation?: string;
-  yatraName?: string;
 };
 
 const regTypes: { value: RegistrationType; label: string; desc: string; icon: React.ElementType }[] = [
   { value: "individual", label: "Individual", desc: "Single participant registration", icon: User },
-  { value: "family", label: "Family", desc: "Register your family (2–10 members)", icon: Users },
-  { value: "group", label: "Group", desc: "10+ participants from the same organisation", icon: Users },
   { value: "institution", label: "Institution", desc: "School, university, or organisation", icon: Building2 },
-  { value: "yatra", label: "Yatra", desc: "Register as part of a spiritual yatra group", icon: Zap },
 ];
 
 const countries = [
@@ -294,52 +277,6 @@ export default function RegistrationForm({ isDonorFlow = false }: { isDonorFlow?
               </div>
 
               {/* Dynamic Fields based on registration type */}
-              {regType === "family" && (
-                <div>
-                  <label className="block text-xs font-semibold font-sans text-ink tracking-wider uppercase mb-1.5">
-                    Family Members Count *
-                  </label>
-                  <input
-                    {...register("familyMembersCount")}
-                    type="number"
-                    min="2"
-                    max="10"
-                    className="w-full border border-gray-200 rounded-sm px-4 py-3 text-ink-body text-sm font-sans focus:outline-none focus:border-gold transition-colors"
-                    placeholder="e.g. 4"
-                  />
-                  {errors.familyMembersCount && <p className="text-red-500 text-xs mt-1">{errors.familyMembersCount?.message}</p>}
-                </div>
-              )}
-
-              {regType === "group" && (
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                  <div>
-                    <label className="block text-xs font-semibold font-sans text-ink tracking-wider uppercase mb-1.5">
-                      Group / Org Name *
-                    </label>
-                    <input
-                      {...register("groupName")}
-                      className="w-full border border-gray-200 rounded-sm px-4 py-3 text-ink-body text-sm font-sans focus:outline-none focus:border-gold transition-colors"
-                      placeholder="Organization Name"
-                    />
-                    {errors.groupName && <p className="text-red-500 text-xs mt-1">{errors.groupName?.message}</p>}
-                  </div>
-                  <div>
-                    <label className="block text-xs font-semibold font-sans text-ink tracking-wider uppercase mb-1.5">
-                      Group Size *
-                    </label>
-                    <input
-                      {...register("groupSize")}
-                      type="number"
-                      min="10"
-                      className="w-full border border-gray-200 rounded-sm px-4 py-3 text-ink-body text-sm font-sans focus:outline-none focus:border-gold transition-colors"
-                      placeholder="e.g. 15"
-                    />
-                    {errors.groupSize && <p className="text-red-500 text-xs mt-1">{errors.groupSize?.message}</p>}
-                  </div>
-                </div>
-              )}
-
               {regType === "institution" && (
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
@@ -364,20 +301,6 @@ export default function RegistrationForm({ isDonorFlow = false }: { isDonorFlow?
                     />
                     {errors.designation && <p className="text-red-500 text-xs mt-1">{errors.designation?.message}</p>}
                   </div>
-                </div>
-              )}
-
-              {regType === "yatra" && (
-                <div>
-                  <label className="block text-xs font-semibold font-sans text-ink tracking-wider uppercase mb-1.5">
-                    Yatra Name / Leader *
-                  </label>
-                  <input
-                    {...register("yatraName")}
-                    className="w-full border border-gray-200 rounded-sm px-4 py-3 text-ink-body text-sm font-sans focus:outline-none focus:border-gold transition-colors"
-                    placeholder="Name of your Yatra group"
-                  />
-                  {errors.yatraName && <p className="text-red-500 text-xs mt-1">{errors.yatraName?.message}</p>}
                 </div>
               )}
 

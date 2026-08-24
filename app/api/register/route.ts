@@ -4,19 +4,15 @@ import { sendRegistrationConfirmation } from "@/lib/email";
 import { z } from "zod";
 
 const schema = z.object({
-  type: z.enum(["individual", "family", "group", "institution", "yatra"]),
+  type: z.enum(["individual", "institution"]),
   name: z.string().min(2),
   email: z.string().email(),
   phone: z.string().min(7),
   country: z.string().min(1),
   city: z.string().min(1),
   // Optional dynamic fields
-  familyMembersCount: z.coerce.number().optional(),
-  groupName: z.string().optional(),
-  groupSize: z.coerce.number().optional(),
   institutionName: z.string().optional(),
   designation: z.string().optional(),
-  yatraName: z.string().optional(),
 });
 
 function getISTTimestamp() {
@@ -43,7 +39,7 @@ export async function POST(req: NextRequest) {
 
     let registrationId = `REG-${Date.now().toString().slice(-6)}`;
     try {
-      const dbType = data.type === "yatra" ? "youth" : data.type;
+      const dbType = data.type;
 
       const { neon } = require("@neondatabase/serverless");
       const sql = neon(process.env.DATABASE_URL!);
