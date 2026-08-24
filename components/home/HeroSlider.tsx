@@ -77,7 +77,7 @@ export default function HeroSlider() {
   };
 
   return (
-    <section className="relative w-full h-[90vh] min-h-[560px] overflow-hidden">
+    <section className="relative w-full h-screen min-h-[560px] overflow-hidden">
 
       {/* ============================= */}
       {/* SLIDE BACKGROUND */}
@@ -386,12 +386,6 @@ export default function HeroSlider() {
         <ChevronRight size={20} />
       </button>
 
-
-      {/* ============================= */}
-      {/* BOTTOM FADE */}
-      {/* ============================= */}
-
-      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent pointer-events-none" />
 
     </section>
   );

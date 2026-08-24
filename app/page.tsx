@@ -28,7 +28,7 @@ export default function HomePage() {
         <img 
           src="/WEBSITE%20MEDIA%20PARTNER.png" 
           alt="Media Partner" 
-          className="w-full h-auto max-w-7xl mx-auto block"
+          className="w-full h-auto block object-cover"
         />
       </section>
       <OpeningStatement />
