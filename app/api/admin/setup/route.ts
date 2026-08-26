@@ -7,7 +7,7 @@ export async function GET() {
     const email = "admin@bgvmahotsav2027.org";
     const password = "password123";
 
-    const sql = neon(process.env.DATABASE_URL!);
+    const sql = neon(process.env.DATABASE_URL || "postgresql://neondb_owner:npg_3qNiDTwWsx4f@ep-muddy-flower-ax0xloce-pooler.c-4.us-east-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require&pgbouncer=true");
     const existing = await sql`SELECT * FROM "Admin" WHERE email = ${email}`;
     
     if (existing.length > 0) {

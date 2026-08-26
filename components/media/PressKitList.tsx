@@ -28,7 +28,7 @@ const placeholders: PressKitFile[] = [
 ];
 
 export default function PressKitList({ initialFiles }: { initialFiles: PressKitFile[] }) {
-  const files = initialFiles.length > 0 ? initialFiles : placeholders;
+  const files = initialFiles;
 
   return (
     <section className="bg-white section-pad">

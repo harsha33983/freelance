@@ -3,6 +3,9 @@ import PageHero from "@/components/ui/PageHero";
 import Link from "next/link";
 import { CalendarDays, ArrowLeft } from "lucide-react";
 
+export const dynamic = 'force-dynamic';
+
+
 interface Props { params: { slug: string }; }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import PageHero from "@/components/ui/PageHero";
 import PressKitList from "@/components/media/PressKitList";
 
+export const dynamic = 'force-dynamic';
+
+
 export const metadata: Metadata = {
   title: "Press Kit",
   description: "Official press kit and media resources for the Bhagavad Gita Vishwa Mahotsav 2027.",

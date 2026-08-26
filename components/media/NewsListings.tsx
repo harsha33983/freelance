@@ -31,7 +31,7 @@ const sampleArticles: Article[] = [
 
 export default function NewsListings({ initialArticles }: Props) {
   const [activeTab, setActiveTab] = useState<Tab>("Articles");
-  const articles = initialArticles.length > 0 ? initialArticles : sampleArticles;
+  const articles = initialArticles;
 
   return (
     <section className="bg-white section-pad">

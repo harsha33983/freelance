@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from "next/server";
-import { prisma } from "@/lib/prisma";
 import { requireAdmin } from "@/lib/auth";
 import { neon } from "@neondatabase/serverless";
 import { z } from "zod";
@@ -20,7 +19,7 @@ export async function GET(req: NextRequest) {
   if (error) return error;
 
   try {
-    const sql = neon(process.env.DATABASE_URL!);
+    const sql = neon(process.env.DATABASE_URL || "postgresql://neondb_owner:npg_3qNiDTwWsx4f@ep-muddy-flower-ax0xloce-pooler.c-4.us-east-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require&pgbouncer=true");
     const articles = await sql`SELECT id, title, slug, category, excerpt, author, "publishedAt", "coverImage" FROM "NewsArticle" ORDER BY "publishedAt" DESC`;
     return NextResponse.json(articles);
   } catch (err) {
@@ -36,22 +35,30 @@ export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
     const data = articleSchema.parse(body);
+    const sql = neon(process.env.DATABASE_URL || "postgresql://neondb_owner:npg_3qNiDTwWsx4f@ep-muddy-flower-ax0xloce-pooler.c-4.us-east-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require&pgbouncer=true");
 
-    const article = await prisma.newsArticle.create({
-      data: {
-        ...data,
-        publishedAt: data.publishedAt ? new Date(data.publishedAt) : new Date(),
-        coverImage: data.coverImage || null,
-        author: data.author || "Mahotsav Team",
-      },
-    });
-    return NextResponse.json(article, { status: 201 });
-  } catch (err) {
+    const existing = await sql`SELECT id FROM "NewsArticle" WHERE slug = ${data.slug}`;
+    if (existing.length > 0) {
+      return NextResponse.json({ message: "An article with this slug already exists." }, { status: 409 });
+    }
+
+    const id = crypto.randomUUID();
+    const publishedAt = (data.publishedAt && data.publishedAt.trim() !== "") ? new Date(data.publishedAt).toISOString() : new Date().toISOString();
+    const coverImage = data.coverImage || null;
+    const author = data.author || "Mahotsav Team";
+
+    const result = await sql`
+      INSERT INTO "NewsArticle" (id, title, slug, category, excerpt, body, "coverImage", author, "publishedAt", "updatedAt")
+      VALUES (${id}, ${data.title}, ${data.slug}, ${data.category}, ${data.excerpt}, ${data.body}, ${coverImage}, ${author}, ${publishedAt}, NOW())
+      RETURNING *
+    `;
+    
+    return NextResponse.json(result[0], { status: 201 });
+  } catch (err: any) {
     if (err instanceof z.ZodError) {
       return NextResponse.json({ message: "Validation error", errors: err.issues }, { status: 422 });
     }
-    console.error("[POST /api/admin/news]", err);
-    return NextResponse.json({ message: "Server error" }, { status: 500 });
+    console.error("[POST /api/admin/news]", err?.message || err);
+    return NextResponse.json({ message: "Server error", error: err?.message }, { status: 500 });
   }
 }
-

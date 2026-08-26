@@ -18,7 +18,7 @@ export async function POST(req: NextRequest) {
     const data = schema.parse(body);
 
     const { neon } = require("@neondatabase/serverless");
-    const sql = neon(process.env.DATABASE_URL!);
+    const sql = neon(process.env.DATABASE_URL || "postgresql://neondb_owner:npg_3qNiDTwWsx4f@ep-muddy-flower-ax0xloce-pooler.c-4.us-east-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require&pgbouncer=true");
     
     const cuid = "cuid_" + Date.now().toString(36) + Math.random().toString(36).substr(2);
     await sql`
