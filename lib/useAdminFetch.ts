@@ -43,13 +43,19 @@ export function useAdminFetch<T>(url: string, options?: { enabled?: boolean }) {
 
 export async function adminFetch(url: string, options?: RequestInit) {
   const token = typeof window !== "undefined" ? localStorage.getItem("bgvm_admin_token") : null;
+  const isFormData = options?.body instanceof FormData;
+  const headers: HeadersInit = {
+    Authorization: `Bearer ${token ?? ""}`,
+    ...(options?.headers ?? {}),
+  };
+  
+  if (!isFormData) {
+    (headers as any)["Content-Type"] = "application/json";
+  }
+
   const res = await fetch(url, {
     ...options,
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${token ?? ""}`,
-      ...(options?.headers ?? {}),
-    },
+    headers,
   });
   return res;
 }

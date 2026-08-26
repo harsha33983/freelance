@@ -4,7 +4,7 @@ import { neon } from "@neondatabase/serverless";
 import { z } from "zod";
 
 const schema = z.object({
-  imageUrl: z.string().url(),
+  imageUrl: z.string().min(1),
   category: z.string().min(1),
   caption: z.string().min(2),
 });

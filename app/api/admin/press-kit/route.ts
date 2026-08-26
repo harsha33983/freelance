@@ -5,7 +5,7 @@ import { z } from "zod";
 
 const schema = z.object({
   title: z.string().min(2),
-  fileUrl: z.string().url(),
+  fileUrl: z.string().min(1),
   fileType: z.string().min(1),
 });
 
