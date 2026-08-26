@@ -16,7 +16,7 @@ function walk(dir) {
   return results;
 }
 
-const fallbackString = 'postgresql://neondb_owner:npg_3qNiDTwWsx4f@ep-muddy-flower-ax0xloce-pooler.c-4.us-east-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require&pgbouncer=true';
+
 const files = walk('./app/api').filter(f => f.endsWith('.ts'));
 
 files.forEach(file => {
