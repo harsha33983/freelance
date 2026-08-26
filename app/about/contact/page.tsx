@@ -32,8 +32,8 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="font-sans font-semibold text-ink text-sm mb-1">Facebook</p>
-                    <a href="#" className="text-gold hover:underline text-sm font-sans">
-                      @bgvmahotsav2027
+                    <a href="https://www.facebook.com/Divineauraworld" target="_blank" rel="noopener noreferrer" className="text-gold hover:underline text-sm font-sans">
+                      @Divineauraworld
                     </a>
                   </div>
                 </div>
@@ -43,8 +43,8 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="font-sans font-semibold text-ink text-sm mb-1">X (Twitter)</p>
-                    <a href="#" className="text-gold hover:underline text-sm font-sans">
-                      @bgvmahotsav2027
+                    <a href="https://twitter.com/Divineauraworld" target="_blank" rel="noopener noreferrer" className="text-gold hover:underline text-sm font-sans">
+                      @Divineauraworld
                     </a>
                   </div>
                 </div>
@@ -54,8 +54,8 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="font-sans font-semibold text-ink text-sm mb-1">Instagram</p>
-                    <a href="#" className="text-gold hover:underline text-sm font-sans">
-                      @bgvmahotsav2027
+                    <a href="https://www.instagram.com/Divineauraworld" target="_blank" rel="noopener noreferrer" className="text-gold hover:underline text-sm font-sans">
+                      @Divineauraworld
                     </a>
                   </div>
                 </div>
@@ -65,8 +65,8 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="font-sans font-semibold text-ink text-sm mb-1">YouTube</p>
-                    <a href="#" className="text-gold hover:underline text-sm font-sans">
-                      Bhagavad Gita Vishwa Mahotsav
+                    <a href="https://www.youtube.com/@Divineauraworld" target="_blank" rel="noopener noreferrer" className="text-gold hover:underline text-sm font-sans">
+                      @Divineauraworld
                     </a>
                   </div>
                 </div>
