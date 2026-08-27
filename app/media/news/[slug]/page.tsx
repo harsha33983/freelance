@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function NewsDetailPage({ params }: Props) {
   let article: any = null;
   try {
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://divineaura.world";
     const res = await fetch(`${baseUrl}/api/news/${params.slug}`, { cache: "no-store" });
     if (res.ok) article = await res.json();
   } catch {}

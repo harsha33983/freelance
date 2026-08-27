@@ -14,7 +14,7 @@ export default async function NewsPage() {
   // Fetch from API; render empty state gracefully if DB not ready
   let articles: any[] = [];
   try {
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://divineaura.world";
     const res = await fetch(`${baseUrl}/api/news`, { cache: "no-store" });
     if (res.ok) articles = await res.json();
   } catch {}

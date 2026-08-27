@@ -16,7 +16,7 @@ export default function AnnouncementBar() {
 
   return (
     <div className="bg-[#D4AF37] text-white py-4 overflow-hidden relative z-50">
-      <div className="flex whitespace-nowrap animate-marquee w-fit">
+      <div className="flex whitespace-nowrap animate-marquee w-max">
         {repeated.map((msg, i) => (
           <span key={i} className="inline-flex items-center">
             <span className="text-xs font-sans font-semibold tracking-widest2 px-8">

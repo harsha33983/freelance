@@ -7,7 +7,7 @@ export const metadata: Metadata = { title: "Downloads" };
 export default async function DownloadsPage() {
   let files: any[] = [];
   try {
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://divineaura.world";
     const res = await fetch(`${baseUrl}/api/press-kit`, { cache: "no-store" });
     if (res.ok) files = await res.json();
   } catch {}
