@@ -17,10 +17,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function NewsDetailPage({ params }: Props) {
   let article: any = null;
   try {
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://divineaura.world";
-    const res = await fetch(`${baseUrl}/api/news/${params.slug}`, { cache: "no-store" });
-    if (res.ok) article = await res.json();
-  } catch {}
+    const { neon } = await import("@neondatabase/serverless");
+    const sql = neon(process.env.DATABASE_URL || "postgresql://neondb_owner:npg_3qNiDTwWsx4f@ep-muddy-flower-ax0xloce-pooler.c-4.us-east-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require&pgbouncer=true");
+    const rows = await sql`SELECT * FROM "NewsArticle" WHERE slug = ${params.slug} LIMIT 1`;
+    if (rows.length > 0) article = rows[0];
+  } catch (err) {
+    console.error("Failed to fetch news article:", err);
+  }
 
   if (!article) {
     // Graceful fallback for sample content

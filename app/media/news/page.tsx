@@ -14,10 +14,12 @@ export default async function NewsPage() {
   // Fetch from API; render empty state gracefully if DB not ready
   let articles: any[] = [];
   try {
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://divineaura.world";
-    const res = await fetch(`${baseUrl}/api/news`, { cache: "no-store" });
-    if (res.ok) articles = await res.json();
-  } catch {}
+    const { neon } = await import("@neondatabase/serverless");
+    const sql = neon(process.env.DATABASE_URL || "postgresql://neondb_owner:npg_3qNiDTwWsx4f@ep-muddy-flower-ax0xloce-pooler.c-4.us-east-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require&pgbouncer=true");
+    articles = await sql`SELECT id, title, slug, category, excerpt, "coverImage", author, "publishedAt" FROM "NewsArticle" ORDER BY "publishedAt" DESC LIMIT 100`;
+  } catch (err) {
+    console.error("Failed to fetch news:", err);
+  }
 
   return (
     <>

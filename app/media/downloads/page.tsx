@@ -7,10 +7,12 @@ export const metadata: Metadata = { title: "Downloads" };
 export default async function DownloadsPage() {
   let files: any[] = [];
   try {
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://divineaura.world";
-    const res = await fetch(`${baseUrl}/api/press-kit`, { cache: "no-store" });
-    if (res.ok) files = await res.json();
-  } catch {}
+    const { neon } = await import("@neondatabase/serverless");
+    const sql = neon(process.env.DATABASE_URL || "postgresql://neondb_owner:npg_3qNiDTwWsx4f@ep-muddy-flower-ax0xloce-pooler.c-4.us-east-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require&pgbouncer=true");
+    files = await sql`SELECT * FROM "PressKitFile" ORDER BY "uploadedAt" DESC`;
+  } catch (err) {
+    console.error("Failed to fetch downloads:", err);
+  }
 
   return (
     <>
