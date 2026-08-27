@@ -4,6 +4,9 @@ import PageHero from "@/components/ui/PageHero";
 
 export const metadata: Metadata = { title: "Downloads" };
 
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
+
 export default async function DownloadsPage() {
   let files: any[] = [];
   try {

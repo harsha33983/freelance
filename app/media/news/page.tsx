@@ -3,8 +3,7 @@ import PageHero from "@/components/ui/PageHero";
 import NewsListings from "@/components/media/NewsListings";
 
 export const dynamic = 'force-dynamic';
-
-
+export const revalidate = 0;
 export const metadata: Metadata = {
   title: "News",
   description: "Latest news and updates from the Bhagavad Gita Vishwa Mahotsav 2027.",
