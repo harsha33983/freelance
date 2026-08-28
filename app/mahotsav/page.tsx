@@ -7,6 +7,9 @@ import { BookOpen, Eye, HelpCircle, Hash, Landmark, ArrowRight } from "lucide-re
 export const metadata: Metadata = {
   title: "The Mahotsav — Overview",
   description: "Discover the Bhagavad Gita Vishwa Mahotsav 2027 — a landmark global spiritual celebration spanning 18 countries, 18 chapters, and 18 languages.",
+  alternates: {
+    canonical: "https://divineaura.world/mahotsav",
+  },
 };
 
 const subpages = [
@@ -66,7 +69,7 @@ export default function MahotsavOverviewPage() {
                   <h3 className="font-serif text-xl font-semibold text-ink">{p.title}</h3>
                   <p className="text-ink-muted text-sm font-sans leading-relaxed flex-1">{p.desc}</p>
                   <span className="text-gold text-xs font-semibold font-sans tracking-wider uppercase flex items-center gap-1 group-hover:gap-2 transition-all">
-                    Read More <ArrowRight size={12} />
+                    Explore {p.title} <ArrowRight size={12} />
                   </span>
                 </Link>
               );

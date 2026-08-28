@@ -1,8 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
 import { requireAdmin } from "@/lib/auth";
-import { writeFile, mkdir } from "fs/promises";
-import path from "path";
-import fs from "fs";
 
 export async function POST(req: NextRequest) {
   const { error } = await requireAdmin(req);
@@ -16,23 +13,20 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ message: "No file uploaded" }, { status: 400 });
     }
 
+    // 5MB file size limit to protect database
+    if (file.size > 5 * 1024 * 1024) {
+      return NextResponse.json({ message: "File exceeds 5MB limit" }, { status: 400 });
+    }
+
     const bytes = await file.arrayBuffer();
     const buffer = Buffer.from(bytes);
 
-    // Sanitize filename to prevent directory traversal
-    const safeFilename = file.name.replace(/[^a-zA-Z0-9.\-_]/g, "_");
-    const filename = `${Date.now()}-${safeFilename}`;
-    const uploadDir = path.join(process.cwd(), "public", "uploads");
+    // Convert file to Base64 Data URL for zero-config serverless deployment
+    const mimeType = file.type || "application/octet-stream";
+    const base64 = buffer.toString("base64");
+    const dataUrl = `data:${mimeType};base64,${base64}`;
 
-    // Ensure directory exists
-    if (!fs.existsSync(uploadDir)) {
-      await mkdir(uploadDir, { recursive: true });
-    }
-
-    const filepath = path.join(uploadDir, filename);
-    await writeFile(filepath, buffer);
-
-    return NextResponse.json({ url: `/uploads/${filename}` }, { status: 201 });
+    return NextResponse.json({ url: dataUrl }, { status: 201 });
   } catch (err: any) {
     console.error("[POST /api/admin/upload]", err);
     return NextResponse.json({ message: "Upload failed", error: err?.message }, { status: 500 });

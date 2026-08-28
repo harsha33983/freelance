@@ -6,6 +6,9 @@ import { ArrowRight, UserPlus, Globe, Building2, Zap, Heart, Home, Users } from 
 export const metadata: Metadata = {
   title: "Participate",
   description: "Join the Bhagavad Gita Vishwa Mahotsav 2027 — register, volunteer, host a Parayana, or participate globally.",
+  alternates: {
+    canonical: "https://divineaura.world/participate",
+  },
 };
 
 const options = [
@@ -42,7 +45,7 @@ export default function ParticipatePage() {
                 <h3 className="font-serif text-xl font-semibold text-ink">{o.title}</h3>
                 <p className="text-ink-muted text-sm font-sans leading-relaxed flex-1">{o.desc}</p>
                 <span className="text-gold text-xs font-semibold font-sans tracking-wider uppercase flex items-center gap-1 group-hover:gap-2 transition-all">
-                  {o.highlight ? "Register Now" : "Learn More"} <ArrowRight size={12} />
+                  {o.highlight ? "Register Now" : `Explore ${o.title}`} <ArrowRight size={12} />
                 </span>
               </Link>
             );

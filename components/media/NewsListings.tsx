@@ -43,8 +43,11 @@ export default function NewsListings({ initialArticles }: Props) {
               transition={{ duration: 0.35, delay: i * 0.07 }}
               className="card-gold-top p-6 group flex flex-col"
             >
-              {/* Cover image placeholder */}
-              
+              {a.coverImage && (
+                <div className="w-full aspect-[16/9] mb-4 bg-cream rounded-sm overflow-hidden">
+                  <img src={a.coverImage} alt={a.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
+                </div>
+              )}
               <div className="flex items-center gap-3 mb-3">
                 <span className="flex items-center gap-1 text-gold text-xs font-semibold font-sans">
                   <Tag size={10} /> {a.category}

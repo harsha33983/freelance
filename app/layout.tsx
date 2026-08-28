@@ -22,12 +22,15 @@ export const metadata: Metadata = {
     "spiritual event 2027",
     "18 countries 18 chapters",
   ],
+  alternates: {
+    canonical: "https://divineaura.world",
+  },
   openGraph: {
     title: "Bhagavad Gita Vishwa Mahotsav 2027",
     description:
       "A Global Celebration of the Eternal Wisdom of the Bhagavad Gita — 18 Countries • 18 Chapters • 18 Languages",
-    url: "https://bgvmahotsav2027.org",
-    siteName: "Bhagavad Gita Vishwa Mahotsav 2027",
+    url: "https://divineaura.world",
+    siteName: "Bhagavad Gita Vishwa Mahotsav",
     type: "website",
     images: [
       {
@@ -44,7 +47,18 @@ export const metadata: Metadata = {
     description: "A Global Celebration of the Eternal Wisdom of the Bhagavad Gita",
     images: ["/og-image.jpg"],
   },
-  metadataBase: new URL("https://bgvmahotsav2027.org"),
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  metadataBase: new URL("https://divineaura.world"),
 };
 
 export default function RootLayout({
@@ -60,6 +74,26 @@ export default function RootLayout({
         <link
           href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap"
           rel="stylesheet"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "Bhagavad Gita Vishwa Mahotsav 2027",
+              "url": "https://divineaura.world",
+              "description": "A Global Celebration of the Eternal Wisdom of the Bhagavad Gita",
+              "publisher": {
+                "@type": "Organization",
+                "name": "Bhagavad Gita Vishwa Mahotsav",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://divineaura.world/icon.jpg"
+                }
+              }
+            })
+          }}
         />
       </head>
       <body>

@@ -6,6 +6,9 @@ import { ArrowRight, MapPin, Users, Star, BookOpen, Zap, Music } from "lucide-re
 export const metadata: Metadata = {
   title: "The Experience",
   description: "The full sensory and spiritual experience of the Bhagavad Gita Vishwa Mahotsav 2027 — venue, zones, stages, and pathways.",
+  alternates: {
+    canonical: "https://divineaura.world/experience",
+  },
 };
 
 const sections = [
@@ -38,7 +41,7 @@ export default function ExperiencePage() {
                 <h3 className="font-serif text-xl font-semibold text-ink">{s.title}</h3>
                 <p className="text-ink-muted text-sm font-sans leading-relaxed flex-1">{s.desc}</p>
                 <span className="text-gold text-xs font-semibold font-sans tracking-wider uppercase flex items-center gap-1 group-hover:gap-2 transition-all">
-                  Explore <ArrowRight size={12} />
+                  Explore {s.title} <ArrowRight size={12} />
                 </span>
               </Link>
             );

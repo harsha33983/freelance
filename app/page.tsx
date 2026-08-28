@@ -11,10 +11,13 @@ export const metadata: Metadata = {
   title: "Bhagavad Gita Vishwa Mahotsav 2027 — 18 Countries • 18 Chapters • 18 Languages",
   description:
     "Join the global celebration of the eternal wisdom of the Bhagavad Gita. 50,000+ participants across 18 countries, 18 chapters, 18 languages. Mega Mahotsav on 27 February 2027.",
+  alternates: {
+    canonical: "https://divineaura.world",
+  },
   openGraph: {
     title: "Bhagavad Gita Vishwa Mahotsav 2027",
     description: "A Global Celebration of the Eternal Wisdom of the Bhagavad Gita",
-    url: "https://bgvmahotsav2027.org",
+    url: "https://divineaura.world",
   },
 };
 
@@ -27,8 +30,10 @@ export default function HomePage() {
       <section className="w-full bg-[#FAF8F2]">
         <img 
           src="/WEBSITE%20MEDIA%20PARTNER.png" 
-          alt="Media Partner" 
+          alt="Official Media Partner for Bhagavad Gita Vishwa Mahotsav 2027" 
           className="w-full h-auto block object-cover"
+          loading="eager"
+          fetchPriority="high"
         />
       </section>
       <OpeningStatement />
@@ -39,6 +44,33 @@ export default function HomePage() {
       <GoldDivider className="container-main" />
       <ProgrammeHighlights />
       <ClosingCTA />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Event",
+            "name": "Bhagavad Gita Vishwa Mahotsav 2027",
+            "startDate": "2027-02-27",
+            "endDate": "2027-02-27",
+            "eventAttendanceMode": "https://schema.org/MixedEventAttendanceMode",
+            "eventStatus": "https://schema.org/EventScheduled",
+            "location": {
+              "@type": "Place",
+              "name": "Global Locations (18 Countries)"
+            },
+            "image": [
+              "https://divineaura.world/og-image.jpg"
+            ],
+            "description": "Join the global celebration of the eternal wisdom of the Bhagavad Gita. 50,000+ participants across 18 countries, 18 chapters, 18 languages.",
+            "organizer": {
+              "@type": "Organization",
+              "name": "Bhagavad Gita Vishwa Mahotsav",
+              "url": "https://divineaura.world"
+            }
+          })
+        }}
+      />
     </>
   );
 }
