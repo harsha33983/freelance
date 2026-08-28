@@ -28,7 +28,6 @@ export default async function NewsDetailPage({ params }: Props) {
     // Graceful fallback for sample content
     article = {
       title: params.slug.split("-").map((w: string) => w.charAt(0).toUpperCase() + w.slice(1)).join(" "),
-      body: "Full article content will appear here once published.",
       publishedAt: new Date().toISOString(),
       author: "Mahotsav Team",
       category: "News",
@@ -50,10 +49,16 @@ export default async function NewsDetailPage({ params }: Props) {
             </span>
             {article.author && <span className="text-ink-muted text-sm font-sans">by {article.author}</span>}
           </div>
-          <div
-            className="prose prose-lg max-w-none font-sans text-ink-body leading-relaxed"
-            dangerouslySetInnerHTML={{ __html: article.body || "<p>Article content coming soon.</p>" }}
-          />
+          
+          {article.coverImage && (
+            <div className="mb-8">
+              <img src={article.coverImage} alt={article.title} className="w-full rounded-sm object-cover max-h-[400px]" />
+              {article.caption && (
+                <p className="text-center text-sm text-ink-muted mt-2 font-sans italic">{article.caption}</p>
+              )}
+            </div>
+          )}
+
         </div>
       </section>
     </>

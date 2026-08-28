@@ -1,11 +1,11 @@
-﻿"use client";
+"use client";
 
 import { useEffect, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import {
   LayoutDashboard, Newspaper, Image, Package, Users, Handshake,
-  MessageSquare, LogOut, Menu, X, ChevronRight,
+  MessageSquare, LogOut, Menu, X, ChevronRight, Video
 } from "lucide-react";
 
 const NAV = [
@@ -15,8 +15,9 @@ const NAV = [
   { href: "/admin/partnerships", label: "Partnerships", icon: Handshake },
   { href: "/admin/contacts", label: "Contact Messages", icon: MessageSquare },
   { href: "/admin/news", label: "News Articles", icon: Newspaper },
+  { href: "/admin/videos", label: "Videos", icon: Video },
   { href: "/admin/gallery", label: "Gallery", icon: Image },
-  { href: "/admin/press-kit", label: "Press Kit", icon: Package },
+  { href: "/admin/press-kit", label: "Media Coverage", icon: Package },
 ];
 
 function useAdminAuth(pathname: string) {

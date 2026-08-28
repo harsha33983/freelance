@@ -127,7 +127,7 @@ export default function DashboardPage() {
           { href: "/admin/news/new", label: "New Article", icon: Newspaper },
           { href: "/admin/registrations", label: "View Registrations", icon: Users },
           { href: "/admin/gallery", label: "Upload Gallery", icon: Globe },
-          { href: "/admin/press-kit", label: "Add Press File", icon: MessageSquare },
+          { href: "/admin/press-kit", label: "Add Media File", icon: MessageSquare },
         ].map(({ href, label, icon: Icon }) => (
           <Link
             key={href}

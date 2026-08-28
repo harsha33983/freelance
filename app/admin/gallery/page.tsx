@@ -17,7 +17,7 @@ const schema = z.object({
 });
 type FormData = z.infer<typeof schema>;
 
-const CATEGORIES = ["Curtain Raiser", "18 Countries", "Venue", "Community", "Spiritual", "Cultural", "General"];
+const CATEGORIES = ["Curtain Raiser", "18 Countries", "Venue", "Community", "Spiritual", "Cultural", "General", "Media Coverage"];
 
 export default function AdminGalleryPage() {
   const { data, loading, refetch } = useAdminFetch<GalleryItem[]>("/api/gallery");

@@ -12,7 +12,7 @@ interface GalleryItem {
   uploadedAt?: string;
 }
 
-const categories = ["All", "Curtain Raiser", "18 Countries", "Venue", "Community", "Spiritual", "Cultural"];
+const categories = ["All", "Curtain Raiser", "18 Countries", "Venue", "Community", "Spiritual", "Cultural", "Media Coverage"];
 
 // Placeholder items for when DB is empty
 const placeholders: GalleryItem[] = Array.from({ length: 12 }, (_, i) => ({

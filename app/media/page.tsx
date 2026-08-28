@@ -4,26 +4,22 @@ import Link from "next/link";
 import { ArrowRight, Newspaper, Megaphone, FileText, BookOpen, Image, Video, Radio, Package, Download } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Media & Stories",
-  description: "News, press releases, stories, gallery, videos, press kit, and downloads from the Bhagavad Gita Vishwa Mahotsav 2027.",
+  title: "Media",
+  description: "News, gallery, videos, press kit, and downloads from the Bhagavad Gita Vishwa Mahotsav 2027.",
 };
 
 const mediaLinks = [
   { icon: Newspaper, title: "News", desc: "Latest news and updates from the Mahotsav.", href: "/media/news" },
-  { icon: Megaphone, title: "Announcements", desc: "Official announcements and notifications.", href: "/media/announcements" },
-  { icon: FileText, title: "Press Releases", desc: "Official press releases for media professionals.", href: "/media/press-releases" },
-  { icon: BookOpen, title: "Stories", desc: "Stories of inspiration, transformation, and community.", href: "/media/stories" },
   { icon: Image, title: "Gallery", desc: "Photography from events, venues, and programmes.", href: "/media/gallery" },
   { icon: Video, title: "Videos", desc: "Event recordings, promotional films, and interviews.", href: "/media/videos" },
-  { icon: Radio, title: "Media Coverage", desc: "Press and media coverage of the Mahotsav.", href: "/media/coverage" },
-  { icon: Package, title: "Press Kit", desc: "Official media pack with logos, bios, and assets.", href: "/media/press-kit" },
+  { icon: Package, title: "Media Coverage", desc: "Official media pack with logos, bios, and assets.", href: "/media/press-kit" },
   { icon: Download, title: "Upcoming Events", desc: "View the schedule for upcoming events and programs.", href: "/media/upcoming" },
 ];
 
 export default function MediaPage() {
   return (
     <>
-      <PageHero badge="Media & Stories" title="Media & Stories" subtitle="News, stories, and media resources from the Bhagavad Gita Vishwa Mahotsav 2027." />
+      <PageHero badge="Media" title="Media" subtitle="News and media resources from the Bhagavad Gita Vishwa Mahotsav 2027." />
       <section className="bg-white section-pad">
         <div className="container-main grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {mediaLinks.map((m) => {

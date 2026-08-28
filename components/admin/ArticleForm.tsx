@@ -13,11 +13,12 @@ const schema = z.object({
   title: z.string().min(3, "Title required"),
   slug: z.string().min(3).regex(/^[a-z0-9-]+$/, "Lowercase letters, numbers, hyphens only"),
   category: z.string().min(1, "Category required"),
-  excerpt: z.string().min(10, "Excerpt required (min 10 chars)"),
-  body: z.string().min(20, "Body required (min 20 chars)"),
+
   coverImage: z.string().optional(),
   author: z.string().optional(),
   publishedAt: z.string().optional(),
+  caption: z.string().optional(),
+  articleUrl: z.string().optional(),
 });
 type FormData = z.infer<typeof schema>;
 
@@ -31,11 +32,41 @@ interface Props {
 export default function ArticleForm({ articleId, defaultValues }: Props) {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
+  const [uploading, setUploading] = useState(false);
+  const [uploadedUrl, setUploadedUrl] = useState<string | null>(null);
+  const [uploadedFileName, setUploadedFileName] = useState<string | null>(null);
 
   const { register, handleSubmit, setValue, formState: { errors } } = useForm<FormData>({
     resolver: zodResolver(schema),
     defaultValues,
   });
+
+  const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    setUploading(true);
+    const formData = new FormData();
+    formData.append("file", file);
+
+    try {
+      const res = await adminFetch("/api/admin/upload", { method: "POST", body: formData });
+      if (res.ok) {
+        const json = await res.json();
+        setUploadedUrl(json.url);
+        setUploadedFileName(file.name);
+        setValue("coverImage", json.url);
+        toast.success("Image uploaded!");
+      } else {
+        toast.error("Upload failed.");
+      }
+    } catch {
+      toast.error("Network error.");
+    } finally {
+      setUploading(false);
+      e.target.value = '';
+    }
+  };
 
   // Auto-generate slug from title
   const autoSlug = (title: string) => {
@@ -100,27 +131,30 @@ export default function ArticleForm({ articleId, defaultValues }: Props) {
           <input {...register("publishedAt")} type="date" className="admin-input" />
         </div>
 
-        <div className="sm:col-span-2">
-          <label className="admin-label">Cover Image URL</label>
-          <input {...register("coverImage")} className="admin-input" placeholder="https://…" />
+        <div className="sm:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4 border border-gray-100 p-4 rounded-sm bg-gray-50/50">
+          <div>
+            <label className="admin-label">Upload Cover Image</label>
+            <label className={`cursor-pointer flex items-center justify-center w-full h-[42px] rounded-sm text-xs font-semibold uppercase tracking-wide transition-colors ${uploadedUrl ? 'bg-green-100 text-green-700 border border-green-200' : uploading ? 'bg-gray-100 text-gray-400 border border-gray-200' : 'bg-gold/10 text-gold border border-gold/20 hover:bg-gold/20'}`}>
+              {uploading ? <Loader2 size={14} className="animate-spin" /> : uploadedFileName ? "Uploaded ✓" : "Select File"}
+              <input type="file" className="hidden" accept="image/*" onChange={handleFileUpload} disabled={uploading} />
+            </label>
+          </div>
+          <div>
+            <label className="admin-label">Or Image URL</label>
+            <input {...register("coverImage")} className="admin-input" placeholder="https://…" />
+            {errors.coverImage && <p className="admin-error">{errors.coverImage.message}</p>}
+          </div>
+          <div className="sm:col-span-2">
+            <label className="admin-label">Image Caption (Optional)</label>
+            <input {...register("caption")} className="admin-input" placeholder="Enter caption for cover image" />
+            {errors.caption && <p className="admin-error">{errors.caption.message}</p>}
+          </div>
+          <div className="sm:col-span-2">
+            <label className="admin-label">External Article URL (Optional)</label>
+            <input {...register("articleUrl")} className="admin-input" placeholder="https://timesofindia.com/..." />
+            {errors.articleUrl && <p className="admin-error">{errors.articleUrl.message}</p>}
+          </div>
         </div>
-      </div>
-
-      <div>
-        <label className="admin-label">Excerpt * (shown in list view)</label>
-        <textarea {...register("excerpt")} rows={3} className="admin-input resize-none" placeholder="Short summary of the article…" />
-        {errors.excerpt && <p className="admin-error">{errors.excerpt.message}</p>}
-      </div>
-
-      <div>
-        <label className="admin-label">Body * (HTML supported)</label>
-        <textarea
-          {...register("body")}
-          rows={18}
-          className="admin-input resize-y font-mono text-xs leading-relaxed"
-          placeholder="<p>Article body here… HTML tags are supported.</p>"
-        />
-        {errors.body && <p className="admin-error">{errors.body.message}</p>}
       </div>
 
       <div className="flex gap-3 pt-2">

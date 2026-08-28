@@ -7,11 +7,12 @@ const articleSchema = z.object({
   title: z.string().min(3),
   slug: z.string().min(3).regex(/^[a-z0-9-]+$/, "Slug must be lowercase letters, numbers, hyphens only"),
   category: z.string().min(1),
-  excerpt: z.string().min(10),
-  body: z.string().min(20),
-  coverImage: z.string().url().optional().or(z.literal("")),
+
+  coverImage: z.string().optional().or(z.literal("")),
   author: z.string().optional(),
   publishedAt: z.string().optional(),
+  caption: z.string().optional(),
+  articleUrl: z.string().optional(),
 });
 
 export async function GET(req: NextRequest) {
@@ -20,7 +21,7 @@ export async function GET(req: NextRequest) {
 
   try {
     const sql = neon(process.env.DATABASE_URL || "postgresql://neondb_owner:npg_3qNiDTwWsx4f@ep-muddy-flower-ax0xloce-pooler.c-4.us-east-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require&pgbouncer=true");
-    const articles = await sql`SELECT id, title, slug, category, excerpt, author, "publishedAt", "coverImage" FROM "NewsArticle" ORDER BY "publishedAt" DESC`;
+    const articles = await sql`SELECT id, title, slug, category, author, "publishedAt", "coverImage", caption, "articleUrl" FROM "NewsArticle" ORDER BY "publishedAt" DESC`;
     return NextResponse.json(articles);
   } catch (err) {
     console.error("[GET /api/admin/news]", err);
@@ -46,10 +47,12 @@ export async function POST(req: NextRequest) {
     const publishedAt = (data.publishedAt && data.publishedAt.trim() !== "") ? new Date(data.publishedAt).toISOString() : new Date().toISOString();
     const coverImage = data.coverImage || null;
     const author = data.author || "Mahotsav Team";
+    const caption = data.caption || null;
+    const articleUrl = data.articleUrl || null;
 
     const result = await sql`
-      INSERT INTO "NewsArticle" (id, title, slug, category, excerpt, body, "coverImage", author, "publishedAt", "updatedAt")
-      VALUES (${id}, ${data.title}, ${data.slug}, ${data.category}, ${data.excerpt}, ${data.body}, ${coverImage}, ${author}, ${publishedAt}, NOW())
+      INSERT INTO "NewsArticle" (id, title, slug, category, "coverImage", author, "publishedAt", "updatedAt", caption, "articleUrl")
+      VALUES (${id}, ${data.title}, ${data.slug}, ${data.category}, ${coverImage}, ${author}, ${publishedAt}, NOW(), ${caption}, ${articleUrl})
       RETURNING *
     `;
     

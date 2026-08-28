@@ -101,7 +101,7 @@ export default function AdminPressKitPage() {
 
   return (
     <div>
-      <h1 className="font-serif text-2xl font-semibold text-ink mb-6">Press Kit Files</h1>
+      <h1 className="font-serif text-2xl font-semibold text-ink mb-6">Media Coverage Files</h1>
 
       {/* Add form */}
       <div className="bg-white rounded-sm border border-gray-200 p-6 mb-8">
@@ -168,7 +168,7 @@ export default function AdminPressKitPage() {
             </div>
           ))}
           {(data ?? []).length === 0 && (
-            <p className="text-center text-ink-muted font-sans py-10">No press kit files yet.</p>
+            <p className="text-center text-ink-muted font-sans py-10">No media coverage files yet.</p>
           )}
         </div>
       )}

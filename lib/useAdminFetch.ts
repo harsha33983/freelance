@@ -57,5 +57,10 @@ export async function adminFetch(url: string, options?: RequestInit) {
     ...options,
     headers,
   });
+
+  if (res.status === 401 && typeof window !== "undefined") {
+    window.location.href = "/admin/login";
+  }
+
   return res;
 }
