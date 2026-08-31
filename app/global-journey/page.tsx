@@ -14,7 +14,7 @@ const sections = [
   { title: "18 Countries", date: "Jan–Feb 2027", desc: "One chapter, one country — a sacred geography of wisdom.", href: "/global-journey/18-countries" },
   { title: "18 Chapters", date: "Jan–Feb 2027", desc: "Every chapter of the Gita celebrated in its full depth.", href: "/global-journey/18-chapters" },
   { title: "18 Languages", date: "Jan–Feb 2027", desc: "The Gita's voice resonating across eighteen world languages.", href: "/global-journey/18-languages" },
-  { title: "Global Parayana", date: "27 Feb 2027", desc: "The world's largest Bhagavad Gita recitation.", href: "/global-journey/global-parayana" },
+  { title: "Vishwa Parayana", date: "27 Feb 2027", desc: "The world's largest Bhagavad Gita recitation.", href: "/global-journey/global-parayana" },
   { title: "Global Sankalpa", date: "27 Feb 2027", desc: "A collective vow taken by 50,000+ participants.", href: "/global-journey/global-sankalpa" },
   { title: "Road to 27 Feb 2027", date: "Dec 2026 – Feb 2027", desc: "The full timeline of events leading to the Mega Mahotsav.", href: "/global-journey/road-to-mahotsav" },
 ];

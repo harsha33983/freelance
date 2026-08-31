@@ -41,7 +41,7 @@ export default function PhilosophyPage() {
             {
               num: "05",
               title: "Technology as Sacred Tool",
-              body: "The Mahotsav embraces modern technology as a means of spreading ancient wisdom. Live-streaming, digital registration, global virtual participation, multilingual broadcast — all serve the singular purpose of making the Gita accessible to every human being on earth.",
+              body: "The Mahotsav embraces modern technology as a means of spreading ancient wisdom. Live-streaming, digital registration, global virtual participation, multilingual broadcast — all serve the single purpose of making the Gita accessible to every human being on earth.",
             },
           ].map((section) => (
             <div key={section.num} className="flex gap-6 group">
