@@ -33,7 +33,7 @@ export default function ContactPage() {
                   <div>
                     <p className="font-sans font-semibold text-ink text-sm mb-1">Facebook</p>
                     <a href="https://www.facebook.com/divineauraworld9" target="_blank" rel="noopener noreferrer" className="text-gold hover:underline text-sm font-sans">
-                      facebook.com/divineauraworld9
+                      @divineauraworld9
                     </a>
                   </div>
                 </div>
@@ -54,8 +54,8 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="font-sans font-semibold text-ink text-sm mb-1">Instagram</p>
-                    <a href="https://www.instagram.com/Divineauraworld" target="_blank" rel="noopener noreferrer" className="text-gold hover:underline text-sm font-sans">
-                      @Divineauraworld
+                    <a href="https://www.instagram.com/divine_aura.world " target="_blank" rel="noopener noreferrer" className="text-gold hover:underline text-sm font-sans">
+                      @divine_aura.world 
                     </a>
                   </div>
                 </div>

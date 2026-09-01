@@ -4,15 +4,15 @@ import { sendRegistrationConfirmation } from "@/lib/email";
 import { z } from "zod";
 
 const schema = z.object({
-  type: z.enum(["individual", "institution"]),
+  registrationType: z.enum(["Single", "Group", "Institute", "Foreigner"]),
   name: z.string().min(2),
   email: z.string().email(),
   phone: z.string().min(7),
+  noOfPersons: z.number().min(1),
   country: z.string().min(1),
   city: z.string().min(1),
-  // Optional dynamic fields
-  institutionName: z.string().optional(),
-  designation: z.string().optional(),
+  assistance: z.array(z.string()).optional().default([]),
+  registerForEvent: z.array(z.string()).min(1),
 });
 
 function getISTTimestamp() {
@@ -39,7 +39,7 @@ export async function POST(req: NextRequest) {
 
     let registrationId = `REG-${Date.now().toString().slice(-6)}`;
     try {
-      const dbType = data.type;
+      const dbType = data.registrationType;
 
       const { neon } = require("@neondatabase/serverless");
       const sql = neon(process.env.DATABASE_URL || "postgresql://neondb_owner:npg_3qNiDTwWsx4f@ep-muddy-flower-ax0xloce-pooler.c-4.us-east-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require&pgbouncer=true");
@@ -47,8 +47,8 @@ export async function POST(req: NextRequest) {
       const cuid = "cuid_" + Date.now().toString(36) + Math.random().toString(36).substr(2);
       
       await sql`
-        INSERT INTO "Registration" (id, type, name, email, phone, country, city, "createdAt")
-        VALUES (${cuid}, ${dbType}, ${data.name}, ${data.email}, ${data.phone}, ${data.country}, ${data.city}, NOW())
+        INSERT INTO "Registration" (id, type, name, email, phone, country, city, "noOfPersons", "assistance", "registerForEvent", "createdAt")
+        VALUES (${cuid}, ${dbType}, ${data.name}, ${data.email}, ${data.phone}, ${data.country}, ${data.city}, ${data.noOfPersons}, ${data.assistance}, ${data.registerForEvent}, NOW())
       `;
       registrationId = cuid;
     } catch (dbErr) {
@@ -57,7 +57,12 @@ export async function POST(req: NextRequest) {
     }
 
     // Fire-and-forget email — don't block response
-    sendRegistrationConfirmation(data).catch(console.error);
+    sendRegistrationConfirmation({
+      name: data.name,
+      email: data.email,
+      type: data.registrationType,
+      country: data.country
+    }).catch(console.error);
 
     return NextResponse.json({ success: true, id: registrationId }, { status: 201 });
     } catch (err: any) {

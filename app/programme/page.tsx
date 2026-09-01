@@ -12,12 +12,9 @@ const programmes = [
   { icon: CalendarDays, title: "Curtain Raiser", date: "20 Dec 2026", href: "/programme/curtain-raiser" },
   { icon: Star, title: "Mega Mahotsav", date: "27 Feb 2027", href: "/programme/mega-mahotsav" },
   { icon: BookOpen, title: "Grand Parayana", date: "27 Feb 2027", href: "/programme/grand-parayana" },
-  { icon: Mic2, title: "Peetadhipati Sammelanam", date: "24 Feb 2027", href: "/programme/peetadhipati-sammelanam" },
-  { icon: BookOpen, title: "Gita Jnana Sabha", date: "24–26 Feb 2027", href: "/programme/gita-jnana-sabha" },
-  { icon: Zap, title: "Youth Gita", date: "25 Feb 2027", href: "/programme/youth-gita" },
+   { icon: Zap, title: "Youth Gita", date: "25 Feb 2027", href: "/programme/youth-gita" },
   { icon: Music, title: "Cultural Programme", date: "25 Feb 2027", href: "/programme/cultural" },
   { icon: Globe, title: "Global Connect", date: "26 Feb 2027", href: "/programme/global-connect" },
-  { icon: Heart, title: "Gita Sankalpa", date: "27 Feb 2027", href: "/programme/gita-sankalpa" },
 ];
 
 export default function ProgrammePage() {

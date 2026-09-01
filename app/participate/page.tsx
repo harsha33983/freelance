@@ -12,12 +12,12 @@ export const metadata: Metadata = {
 };
 
 const options = [
-  { icon: Globe, title: "Global Participation", desc: "Join from your country — participate in the 18-nation chapter journey.", href: "/participate/global", highlight: false },
+  { icon: Globe, title: "Participation", desc: "Join from your country — participate in the 18-nation chapter journey.", href: "/participate/global", highlight: false },
   { icon: Building2, title: "Institution Participation", desc: "Register your school, university, or organisation as a participant.", href: "/participate/institution", highlight: false },
   { icon: Zap, title: "Youth Participation", desc: "Special registration for ages 15–35 with dedicated Youth Gita programme.", href: "/participate/youth", highlight: false },
   { icon: Heart, title: "Volunteer", desc: "Offer your time and skills to serve the Mahotsav.", href: "/participate/volunteer", highlight: false },
   { icon: Home, title: "Host a Gita Parayana", desc: "Organise a Bhagavad Gita recitation in your community or institution.", href: "/participate/host-parayana", highlight: false },
-  { icon: Users, title: "Group Registration", desc: "Register a group of 10 or more participants together.", href: "/participate/group", highlight: false },
+  { icon: Users, title: "Group Registration", desc: "Group of people can register.", href: "/participate/group", highlight: false },
 ];
 
 export default function ParticipatePage() {

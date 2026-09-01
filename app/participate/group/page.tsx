@@ -6,7 +6,7 @@ export const metadata: Metadata = { title: "Group Registration" };
 export default function GroupPage() {
   return (
     <>
-      <PageHero badge="Group Registration" title="Register Your Group" subtitle="Groups of 10 or more receive special group rates, a dedicated group coordinator, and block seating arrangements." />
+      <PageHero badge="Group Registration" title="Register Your Group" subtitle="group of people can register." />
       <section className="bg-white section-pad">
         <div className="container-main"><RegistrationForm /></div>
       </section>

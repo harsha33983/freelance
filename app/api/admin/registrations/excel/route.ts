@@ -28,8 +28,14 @@ export async function GET(req: NextRequest) {
       sql`SELECT * FROM "ContactMessage" ORDER BY "createdAt" DESC`,
     ]);
 
+    const formattedRegistrations = registrations.map((r: any) => ({
+      ...r,
+      assistance: Array.isArray(r.assistance) ? r.assistance.join(" | ") : r.assistance,
+      registerForEvent: Array.isArray(r.registerForEvent) ? r.registerForEvent.join(" | ") : r.registerForEvent
+    }));
+
     const data: Record<string, any[]> = {
-      "Registrations": registrations,
+      "Registrations": formattedRegistrations,
       "Volunteers": volunteers,
       "Parayana Hosts": parayana,
       "Partnerships": partnerships,

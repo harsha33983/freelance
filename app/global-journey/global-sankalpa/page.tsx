@@ -9,5 +9,5 @@ export const metadata: Metadata = {
 
 export default function GlobalSankalpaPage() {
   const data = globalJourneyPages["global-sankalpa"];
-  return <ContentPage {...data} cta={{ label: "Take the Sankalpa", href: "/participate/register" }} />;
+  return <ContentPage {...data}  />;
 }

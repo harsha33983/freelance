@@ -24,7 +24,7 @@ export const globalJourneyPages: Record<string, SimplePageData> = {
     subtitle: "For the first time, a coordinated global effort will translate, record, and broadcast the Bhagavad Gita across eighteen major world languages.",
     body: [
       "The Bhagavad Gita has already been translated into over 80 languages — but the Mahotsav takes this a step further by making 18 specific language editions the living, spoken voice of the event.",
-      "The 18 languages of the Mahotsav are: Sanskrit (the original), Hindi, English, Tamil, Telugu, Kannada, Malayalam, Gujarati, Marathi, Bengali, Portuguese, Spanish, German, French, Japanese, Arabic, Russian, and Swahili.",
+      "The 18 languages of the Mahotsav are: Sanskrit (the original), Hindi, English, Portuguese , Afrikaans , Irish , Italian , Dutch , Chinese , Spanish, German, French, Japanese, Arabic, Russian , Maori ,  Zulu .",
       "Each language edition will include a fresh, scholar-reviewed translation of all 18 chapters, a high-quality audio recording by native-speaker practitioners, and a dedicated digital platform for free global access.",
       "The multilingual dimension of the Mahotsav is a living demonstration of one of the Gita's central teachings: that the eternal truth (sanatana dharma) transcends all particular forms, including language.",
     ],

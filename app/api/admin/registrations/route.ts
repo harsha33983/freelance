@@ -28,10 +28,14 @@ export async function GET(req: NextRequest) {
 
     // CSV export
     if (format === "csv") {
-      const headers = ["id", "type", "name", "email", "phone", "country", "city", "createdAt"];
-      const rows = (registrations as Record<string, unknown>[]).map((r) =>
-        headers.map((h) => JSON.stringify((r as Record<string, unknown>)[h] ?? "")).join(",")
-      );
+      const headers = ["id", "type", "name", "email", "phone", "country", "city", "noOfPersons", "assistance", "registerForEvent", "createdAt"];
+      const rows = (registrations as Record<string, unknown>[]).map((r) => {
+        return headers.map((h) => {
+          let val = (r as Record<string, unknown>)[h] ?? "";
+          if (Array.isArray(val)) val = val.join(" | ");
+          return JSON.stringify(val);
+        }).join(",");
+      });
       const csv = [headers.join(","), ...rows].join("\n");
 
       return new NextResponse(csv, {

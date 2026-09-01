@@ -1,12 +1,11 @@
 const { neon } = require('@neondatabase/serverless');
-
+const sql = neon(process.env.DATABASE_URL || 'postgresql://neondb_owner:npg_3qNiDTwWsx4f@ep-muddy-flower-ax0xloce-pooler.c-4.us-east-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require&pgbouncer=true');
 async function run() {
-  const sql = neon("postgresql://neondb_owner:npg_3qNiDTwWsx4f@ep-muddy-flower-ax0xloce-pooler.c-4.us-east-2.aws.neon.tech/neondb?sslmode=require&channel_binding=require&pgbouncer=true");
   try {
-    const articles = await sql`SELECT * FROM "NewsArticle"`;
-    console.log("Articles:", articles);
-  } catch (err) {
-    console.error(err);
+    const res = await sql`SELECT column_name, data_type FROM information_schema.columns WHERE table_name = 'Registration'`;
+    console.log(JSON.stringify(res, null, 2));
+  } catch(e) {
+    console.error(e);
   }
 }
 run();

@@ -6,6 +6,39 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useJoinModal } from "@/lib/useJoinModal";
 import Link from "next/link";
 
+function Countdown({ targetDate }: { targetDate: string }) {
+  const [timeLeft, setTimeLeft] = useState("");
+
+  useEffect(() => {
+    const target = new Date(targetDate).getTime();
+
+    const update = () => {
+      const now = new Date().getTime();
+      const distance = target - now;
+
+      if (distance < 0) {
+        setTimeLeft("Started");
+        return;
+      }
+
+      const d = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const s = Math.floor((distance % (1000 * 60)) / 1000);
+      
+      setTimeLeft(`${d}d ${h}h ${m}m ${s}s`);
+    };
+
+    update();
+    const interval = setInterval(update, 1000);
+    return () => clearInterval(interval);
+  }, [targetDate]);
+
+  if (!timeLeft) return null;
+
+  return <span className="text-[#D4AF37] text-lg sm:text-xl md:text-2xl font-mono font-bold tracking-widest">{timeLeft}</span>;
+}
+
 const slides = [
   {
     id: 1,
@@ -97,9 +130,8 @@ export default function HeroSlider() {
           exit="exit"
           transition={{
             duration: 1.2,
-            ease: "easeInOut",
           }}
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 bg-contain sm:bg-cover bg-top sm:bg-center bg-no-repeat bg-black"
           style={{
             backgroundImage: `url(${slide.image})`,
           }}
@@ -143,28 +175,7 @@ export default function HeroSlider() {
           <div className="w-full px-6 sm:px-8 lg:px-12 xl:px-16">
 
             {/* RIGHT SIDE CONTENT */}
-            <div className="w-full max-w-xl ml-auto mr-0 lg:mr-8 xl:mr-12 text-center md:text-right">
-
-              {/* ============================= */}
-              {/* BADGE */}
-              {/* ============================= */}
-
-              <motion.div
-                initial={{
-                  opacity: 0,
-                  y: 10,
-                }}
-                animate={{
-                  opacity: 1,
-                  y: 0,
-                }}
-                transition={{
-                  delay: 0.15,
-                }}
-                className="mb-6"
-              />
-
-
+            <div className="w-full max-w-xl ml-auto mr-0 lg:mr-8 xl:mr-12 text-center md:text-right -mt-12 md:-mt-24">
 
               {/* ============================= */}
               {/* HEADLINE */}
@@ -233,10 +244,12 @@ export default function HeroSlider() {
                   {
                     label: "Curtain Raiser",
                     date: "20 Dec 2026",
+                    targetDate: "2026-12-20T00:00:00Z"
                   },
                   {
                     label: "Mahotsav",
                     date: "27 Feb 2027",
+                    targetDate: "2027-02-27T00:00:00Z"
                   },
                   {
                     label: "Participants",
@@ -244,19 +257,26 @@ export default function HeroSlider() {
                   },
                 ].map((item) => (
 
-                  <div
-                    key={item.date}
-                    className="flex flex-col items-center px-4 py-2.5 bg-black/20 backdrop-blur-sm border border-[#D4AF37]/40 rounded-sm"
-                  >
-
-                    <span className="text-[#D4AF37] text-xs font-semibold font-sans tracking-wider uppercase">
+                  <div key={item.label} className="flex flex-col items-center justify-center">
+                    <span className="text-[#D4AF37] text-[10px] sm:text-xs font-semibold font-sans tracking-wider uppercase text-center mb-0.5">
                       {item.label}
                     </span>
 
-                    <span className="text-[#FFF8E7] text-base font-serif font-semibold mt-0.5">
-                      {item.date}
-                    </span>
+                    {item.targetDate && (
+                      <span className="text-[#FFF8E7] text-sm sm:text-base font-serif font-semibold text-center mb-1.5">
+                        {item.date}
+                      </span>
+                    )}
 
+                    <div className="flex flex-col items-center justify-center px-4 py-2 bg-black/20 backdrop-blur-sm border border-[#D4AF37]/40 rounded-sm min-w-[130px]">
+                      {!item.targetDate ? (
+                        <span className="text-[#FFF8E7] text-lg sm:text-xl md:text-2xl font-serif font-bold tracking-wide text-center">
+                          {item.date}
+                        </span>
+                      ) : (
+                        <Countdown targetDate={item.targetDate} />
+                      )}
+                    </div>
                   </div>
 
                 ))}
@@ -307,7 +327,7 @@ export default function HeroSlider() {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.45 }}
-                className="mt-6 flex justify-center md:justify-end"
+                className="mt-6 flex justify-center w-full"
               >
                 <Link
                   href="/media/upcoming"

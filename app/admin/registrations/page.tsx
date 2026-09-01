@@ -14,6 +14,9 @@ interface Registration {
   phone: string;
   country: string;
   city: string;
+  noOfPersons: number | null;
+  assistance: string[];
+  registerForEvent: string[];
   createdAt: string;
   [key: string]: unknown;
 }
@@ -162,6 +165,9 @@ export default function RegistrationsPage() {
               { key: "country", header: "Country" },
               { key: "city", header: "City" },
               { key: "phone", header: "Phone" },
+              { key: "noOfPersons", header: "Persons" },
+              { key: "registerForEvent", header: "Events", render: (r) => r.registerForEvent?.join(", ") || "-" },
+              { key: "assistance", header: "Assistance", render: (r) => r.assistance?.join(", ") || "-" },
               {
                 key: "createdAt", header: "Date",
                 render: (r) => <span className="text-ink-muted">{new Date(r.createdAt).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })}</span>,

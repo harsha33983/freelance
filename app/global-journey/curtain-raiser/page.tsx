@@ -22,7 +22,6 @@ export default function CurtainRaiserPage() {
           <ul className="space-y-3 pl-6">
             {[
               "Light a ceremonial lamp (deepa) as a symbol of the Gita's light entering the world",
-              "Recite the first chapter (Arjuna Vishada Yoga) of the Bhagavad Gita",
               "Read aloud the Mahotsav Declaration — a collective statement of intent and aspiration",
               "Register their participation in the Global Sankalpa (collective vow)",
               "Inaugurate their chapter-specific local events leading up to the Mega Mahotsav",
@@ -34,7 +33,7 @@ export default function CurtainRaiserPage() {
             ))}
           </ul>
           <GoldDivider />
-          <p>The Curtain Raiser will be live-streamed globally, with a dedicated multilingual broadcast in all 18 languages. It is expected to be witnessed by over <strong className="text-ink">1 million viewers</strong> across digital platforms.</p>
+          <p>The Curtain Raiser will be live-streamed globally, with a dedicated multilingual broadcast in all 18 languages. It is expected to be witnessed by over <strong className="text-ink">5 million viewers</strong> across digital platforms.</p>
           <div className="card-gold-top p-8 mt-8">
             <h3 className="font-serif text-2xl font-semibold text-ink mb-4">Register for the Curtain Raiser</h3>
             <p className="text-ink-muted mb-6">Join your local Curtain Raiser event or participate virtually from anywhere in the world.</p>

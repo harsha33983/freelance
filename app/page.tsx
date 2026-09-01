@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Bhagavad Gita Vishwa Mahotsav 2027",
-    description: "A Global Celebration of the Eternal Wisdom of the Bhagavad Gita",
+    description: "A Vishwa Mahotsav of the Eternal Wisdom of the Bhagavad Gita",
     url: "https://divineaura.world",
   },
 };
@@ -29,7 +29,7 @@ export default function HomePage() {
       {/* Media Partner Image Section */}
       <section className="w-full bg-[#FAF8F2]">
         <img 
-          src="/WEBSITE%20MEDIA%20PARTNER.png" 
+          src="/Website Page.png" 
           alt="Official Media Partner for Bhagavad Gita Vishwa Mahotsav 2027" 
           className="w-full h-auto block object-cover"
           loading="eager"

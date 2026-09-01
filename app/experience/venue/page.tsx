@@ -13,7 +13,7 @@ const entrances = [
     subtitle: "Gate of Knowledge",
     color: "bg-blue-50 border-blue-200",
     accent: "text-blue-700",
-    desc: "The northern entrance — flanked by towering text pillars inscribed with key Gita slokas. Leads to the Jnana Zone: the Gita Experience Centre, Scholarship Hall, and discourse spaces.",
+    desc: "The northern entrance — flanked by towering text pillars inscribed with key Gita slokas. Leads to the Jnana Zone: the Experience Centre, Scholarship Hall, and discourse spaces.",
   },
   {
     name: "Karma Dwara",

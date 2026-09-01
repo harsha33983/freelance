@@ -16,7 +16,7 @@ const sections = [
   { icon: BookOpen, title: "Four Pathways", desc: "Enter through Jnana, Karma, Bhakti, or Dhyana.", href: "/experience/four-pathways" },
   { icon: Users, title: "50,000+ Participants", desc: "The largest Gita gathering in history.", href: "/experience/participants" },
   { icon: Star, title: "Central Stage", desc: "The heart of the Mahotsav — where wisdom meets wonder.", href: "/experience/central-stage" },
-  { icon: BookOpen, title: "Gita Experience Zone", desc: "Interactive immersion in the Gita's universe.", href: "/experience/gita-experience" },
+  { icon: BookOpen, title: "Experience ", desc: "Interactive immersion in the Gita's universe.", href: "/experience/gita-experience" },
   { icon: Zap, title: "Youth Zone", desc: "A dedicated space for the next generation of seekers.", href: "/experience/youth-zone" },
   { icon: Music, title: "Cultural & Spiritual Zones", desc: "Classical arts, devotional music, and sacred spaces.", href: "/experience/zones" },
 ];
