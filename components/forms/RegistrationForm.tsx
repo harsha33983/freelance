@@ -17,9 +17,9 @@ const formSchema = z.object({
   country: z.string().min(1, "Country required"),
   city: z.string().min(1, "City required"),
   registrationType: z.enum(["Single", "Group", "Institute", "Foreigner"], {
-    errorMap: () => ({ message: "Please select a registration type" })
+    message: "Please select a registration type"
   }),
-  noOfPersons: z.coerce.number().min(1, "At least 1 person required"),
+  noOfPersons: z.number({ message: "Must be a valid number" }).min(1, "At least 1 person required"),
   assistance: z.array(z.string()).optional(),
   registerForEvent: z.array(z.string()).min(1, "Select at least one event"),
 });
@@ -163,7 +163,7 @@ export default function RegistrationForm({ isDonorFlow = false }: { isDonorFlow?
                 No of Persons *
               </label>
               <input
-                {...register("noOfPersons")}
+                {...register("noOfPersons", { valueAsNumber: true })}
                 type="number"
                 min="1"
                 className="w-full border border-gray-200 rounded-sm px-4 py-3 text-ink-body text-sm font-sans focus:outline-none focus:border-gold transition-colors"
@@ -220,7 +220,7 @@ export default function RegistrationForm({ isDonorFlow = false }: { isDonorFlow?
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div>
               <label className="block text-xs font-semibold font-sans text-ink tracking-wider uppercase mb-1.5">
-                Assistance Required
+                Assistance Required (Outside India)
               </label>
               <div className="space-y-2 mt-2">
                 {["Visa", "Accommodation", "Local Transport"].map((item) => (

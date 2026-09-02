@@ -14,7 +14,7 @@ export default function Footer() {
               BGVM 2027
             </h3>
             <p className="text-sm text-ink/70 leading-relaxed">
-              A Global Celebration of the Eternal Wisdom of the Bhagavad Gita — 18 Countries • 18 Chapters • 18 Languages
+              A Vishwa Mahotsav of the Eternal Wisdom of the Bhagavad Gita — 18 Countries • 18 Chapters • 18 Languages
             </p>
           </div>
 

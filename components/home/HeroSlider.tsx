@@ -46,7 +46,7 @@ const slides = [
     bg: "from-black/70 via-black/50 to-black/30",
     accent: "#D4AF37",
     headline: "Bhagavad Gita\nVishwa Mahotsav 2027",
-    sub: "A Global Celebration of the Eternal Wisdom of the Bhagavad Gita",
+    sub: "A Vishwa Mahotsav of the Eternal Wisdom of the Bhagavad Gita",
   },
   {
     id: 2,

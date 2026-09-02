@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     template: "%s | Bhagavad Gita Vishwa Mahotsav 2027",
   },
   description:
-    "Join the global celebration of the eternal wisdom of the Bhagavad Gita. 50,000+ participants across 18 countries, 18 chapters, 18 languages. Mahotsav on 27 February 2027.",
+    "Join the Vishwa Mahotsav of the eternal wisdom of the Bhagavad Gita. 50,000+ participants across 18 countries, 18 chapters, 18 languages. Mahotsav on 27 February 2027.",
   keywords: [
     "Bhagavad Gita",
     "Vishwa Mahotsav 2027",
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Bhagavad Gita Vishwa Mahotsav 2027",
     description:
-      "A Global Celebration of the Eternal Wisdom of the Bhagavad Gita — 18 Countries • 18 Chapters • 18 Languages",
+      "A Vishwa Mahotsav of the Eternal Wisdom of the Bhagavad Gita — 18 Countries • 18 Chapters • 18 Languages",
     url: "https://divineaura.world",
     siteName: "Bhagavad Gita Vishwa Mahotsav",
     type: "website",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Bhagavad Gita Vishwa Mahotsav 2027",
-    description: "A Global Celebration of the Eternal Wisdom of the Bhagavad Gita",
+    description: "A Vishwa Mahotsav of the Eternal Wisdom of the Bhagavad Gita",
     images: ["/og-image.jpg"],
   },
   robots: {
@@ -83,7 +83,7 @@ export default function RootLayout({
               "@type": "WebSite",
               "name": "Bhagavad Gita Vishwa Mahotsav 2027",
               "url": "https://divineaura.world",
-              "description": "A Global Celebration of the Eternal Wisdom of the Bhagavad Gita",
+              "description": "A Vishwa Mahotsav of the Eternal Wisdom of the Bhagavad Gita",
               "publisher": {
                 "@type": "Organization",
                 "name": "Bhagavad Gita Vishwa Mahotsav",

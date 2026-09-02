@@ -16,7 +16,6 @@ const legacyItems = [
   "A multilingual digital archive of the entire Mahotsav — preserved for future generations",
   "Community Gita Parayanas in every participating country, continuing beyond the Mahotsav as sustained practice",
   "A Gita Scholarship Fund supporting research and translation of the Gita into additional world languages",
-  "Seed funding for Gita-based social enterprises aligned with Karma Yoga principles",
   "A Global Gita Maitri Network — connecting Gita study circles across all 18 countries",
 ];
 
@@ -38,7 +37,7 @@ export default function LegacyPage() {
 
           <GoldDivider className="mb-12" />
 
-          <h2 className="section-heading mb-8">Nine Legacy Initiatives</h2>
+          <h2 className="section-heading mb-8">Legacy Initiatives</h2>
           <div className="space-y-5">
             {legacyItems.map((item, i) => (
               <div key={i} className="flex items-start gap-4 group">

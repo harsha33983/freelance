@@ -12,6 +12,10 @@ const schema = z.object({
   email: z.string().email("Valid email required"),
   phone: z.string().min(7, "Phone required"),
   city: z.string().min(1, "City required"),
+  registrationType: z.enum(["Single", "Group"], {
+    message: "Please select a registration type"
+  }),
+  noOfPersons: z.number({ message: "Must be a valid number" }).min(1, "At least 1 person required"),
   country: z.string().min(1, "Country required"),
   area: z.string().min(1, "Please select an area of interest"),
   message: z.string().optional(),
@@ -73,6 +77,26 @@ export default function VolunteerForm() {
             {errors[f.id as keyof FormData] && <p className="text-red-500 text-xs mt-1">{errors[f.id as keyof FormData]?.message}</p>}
           </div>
         ))}
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <div>
+          <label className="block text-xs font-semibold font-sans text-ink tracking-wider uppercase mb-1.5">Registration Type *</label>
+          <select {...register("registrationType")} className="w-full border border-gray-200 rounded-sm px-4 py-3 text-ink-body text-sm font-sans focus:outline-none focus:border-gold transition-colors bg-white">
+            <option value="">Select type</option>
+            <option value="Single">Single</option>
+            <option value="Group">Group</option>
+            <option value="Institute">Institute</option>
+            <option value="Foreigner">Foreigner</option>
+          </select>
+          {errors.registrationType && <p className="text-red-500 text-xs mt-1">{errors.registrationType.message}</p>}
+        </div>
+        <div>
+          <label className="block text-xs font-semibold font-sans text-ink tracking-wider uppercase mb-1.5">No of Persons *</label>
+          <input {...register("noOfPersons", { valueAsNumber: true })} type="number" min="1" placeholder="1"
+            className="w-full border border-gray-200 rounded-sm px-4 py-3 text-ink-body text-sm font-sans focus:outline-none focus:border-gold transition-colors" />
+          {errors.noOfPersons && <p className="text-red-500 text-xs mt-1">{errors.noOfPersons.message}</p>}
+        </div>
       </div>
 
       <div>

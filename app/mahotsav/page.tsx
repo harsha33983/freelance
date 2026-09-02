@@ -34,7 +34,7 @@ export default function MahotsavOverviewPage() {
         <div className="container-main max-w-4xl">
           <div className="prose-gold space-y-6 text-ink-body font-sans leading-relaxed">
             <p className="text-lg">
-              The <strong className="text-ink">Bhagavad Gita Vishwa Mahotsav 2027</strong> is conceived as the most comprehensive global celebration of the Bhagavad Gita ever organised. It is not merely an event — it is a movement rooted in the conviction that the Gita's timeless teachings hold the answers to humanity's deepest challenges.
+              The <strong className="text-ink">Bhagavad Gita Vishwa Mahotsav 2027</strong> is conceived as the most comprehensive Vishwa Mahotsav of the Bhagavad Gita ever organised. It is not merely an event — it is a movement rooted in the conviction that the Gita's timeless teachings hold the answers to humanity's deepest challenges.
             </p>
             <p>
               Structured around the sacred number <span className="text-gold font-semibold">18</span> — eighteen countries, eighteen chapters, eighteen languages. <strong className="text-ink">Bhagavad Gita Vishwa Mahotsav on 27 February 2027</strong>.

@@ -10,7 +10,7 @@ import GoldDivider from "@/components/ui/GoldDivider";
 export const metadata: Metadata = {
   title: "Bhagavad Gita Vishwa Mahotsav 2027 — 18 Countries • 18 Chapters • 18 Languages",
   description:
-    "Join the global celebration of the eternal wisdom of the Bhagavad Gita. 50,000+ participants across 18 countries, 18 chapters, 18 languages. Mega Mahotsav on 27 February 2027.",
+    "Join the Vishwa Mahotsav of the eternal wisdom of the Bhagavad Gita. 50,000+ participants across 18 countries, 18 chapters, 18 languages. Mega Mahotsav on 27 February 2027.",
   alternates: {
     canonical: "https://divineaura.world",
   },
@@ -62,7 +62,7 @@ export default function HomePage() {
             "image": [
               "https://divineaura.world/og-image.jpg"
             ],
-            "description": "Join the global celebration of the eternal wisdom of the Bhagavad Gita. 50,000+ participants across 18 countries, 18 chapters, 18 languages.",
+            "description": "Join the Vishwa Mahotsav of the eternal wisdom of the Bhagavad Gita. 50,000+ participants across 18 countries, 18 chapters, 18 languages.",
             "organizer": {
               "@type": "Organization",
               "name": "Bhagavad Gita Vishwa Mahotsav",

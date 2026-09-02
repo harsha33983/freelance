@@ -14,7 +14,7 @@ export const countries: Country[] = [
     name: "India",
     slug: "india",
     language: "Hindi, English",
-    description: "The central home of the Bhagavad Gita Vishwa Mahotsav journey, bringing together the chapters, languages and communities of the global celebration.",
+    description: "The central home of the Bhagavad Gita Vishwa Mahotsav journey, bringing together the chapters, languages and communities of the Vishwa Mahotsav.",
     gallery: [],
     videos: [],
   },

@@ -63,10 +63,10 @@ export default function CountryPage({ params }: Props) {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div className="relative overflow-hidden rounded-2xl border border-[#E8D6A3] bg-[#F5EAD2] shadow-lg">
             <Image
-              src="/18-countries-map.png"
+              src="/18-nations.jpg"
               alt={`${country.name} in the global Bhagavad Gita journey`}
-              width={1907}
-              height={851}
+              width={1280}
+              height={912}
               className="w-full h-auto"
             />
 

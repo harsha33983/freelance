@@ -56,7 +56,7 @@ export default function SignificancePage() {
             <p>In Sanskrit numerology, <strong className="text-ink">18 = 1 + 8 = 9</strong>, and 9 is considered the number of completion and perfection — the number that returns to itself when multiplied by any integer. It is the number of Brahman, of cosmic consciousness.</p>
             <p>The <strong className="text-ink">18 chapters</strong> of the Bhagavad Gita are not arbitrary divisions. Each chapter has a specific name, a specific yoga, and a specific teaching that builds upon the previous. Together they form a complete manual for human life.</p>
             <p>By structuring the Mahotsav around <strong className="text-ink">18 countries, 18 chapters, and 18 languages</strong>, the organisers are not simply adopting a marketing tagline — they are aligning the entire event with the cosmic architecture of the Gita itself.</p>
-            <p>This is the Mahotsav's deepest aspiration: to mirror the completeness of the Gita's own structure in the completeness of its global celebration.</p>
+            <p>This is the Mahotsav's deepest aspiration: to mirror the completeness of the Gita's own structure in the completeness of its Vishwa Mahotsav.</p>
           </div>
         </div>
       </section>

@@ -12,8 +12,8 @@ export default function RegisterPage() {
     <>
       <PageHero
         badge="Registration"
-        title="Register for the Mahotsav"
-        subtitle="Secure your place at the world's largest Bhagavad Gita celebration — 27 February 2027."
+        title="Registeration"
+        subtitle="Registeration for program ."
       />
       <section className="bg-white section-pad">
         <div className="container-main">
