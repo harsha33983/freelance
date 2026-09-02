@@ -25,7 +25,7 @@ export const countryHotspots: CountryHotspot[] = [
   { name: "Netherlands", slug: "netherlands", top: "40%", left: "73.5%", width: "9%", height: "9%" },
   
   // Center (below Germany/Italy)
-  { name: "Europe", slug: "europe", top: "49%", left: "50%", width: "9%", height: "9%" },
+  { name: "Russia", slug: "russia", top: "49%", left: "50%", width: "9%", height: "9%" },
 
   // Right column (top to bottom)
   { name: "China", slug: "china", top: "28%", left: "93.5%", width: "11%", height: "9%" },

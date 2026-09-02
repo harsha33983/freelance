@@ -29,8 +29,8 @@ export default function HomePage() {
       {/* Media Partner Image Section */}
       <section className="w-full bg-[#FAF8F2]">
         <img 
-          src="/Website Page.png" 
-          alt="Official Media Partner for Bhagavad Gita Vishwa Mahotsav 2027" 
+          src="/partners.png" 
+          alt="Official Partners for Bhagavad Gita Vishwa Mahotsav 2027" 
           className="w-full h-auto block object-cover"
           loading="eager"
           fetchPriority="high"

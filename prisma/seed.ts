@@ -47,7 +47,7 @@ async function main() {
       slug: "18-host-countries-confirmed",
       category: "News",
       excerpt: "All 18 host countries for the chapter events have been confirmed, spanning every inhabited continent.",
-      body: "<p>The Bhagavad Gita Vishwa Mahotsav is proud to confirm all 18 host countries for the Global Journey chapter events.</p><p>The countries are: India (Chapters 1 & 18), United Kingdom (Chapter 2), United States (Chapter 3), Australia (Chapter 4), Canada (Chapter 5), Germany (Chapter 6), Japan (Chapter 7), Brazil (Chapter 8), South Africa (Chapter 9), France (Chapter 10), Russia (Chapter 11), Singapore (Chapter 12), Israel (Chapter 13), New Zealand (Chapter 14), UAE (Chapter 15), Kenya (Chapter 16), Argentina (Chapter 17).</p>",
+      body: "<p>The Bhagavad Gita Vishwa Mahotsav is proud to confirm all 18 host countries for the Global Journey chapter events.</p><p>The countries are: India, United States, United Kingdom, Ireland, France, Germany, Italy, Spain, Netherlands, Russia, China, Japan, UAE, Australia, New Zealand, Canada, Brazil, and South Africa.</p>",
       author: "Mahotsav Team",
       publishedAt: new Date("2026-10-15"),
     },

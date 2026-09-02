@@ -3,15 +3,11 @@
 import { motion } from "framer-motion";
 
 const events = [
-  { date: "Oct 2026", title: "Registration Opens", desc: "Global registration platform goes live. Early-bird participants receive special recognition at the Mahotsav.", phase: "Pre-launch" },
+  { date: "23rd Aug 2026", title: "Soft launch ", desc: "Launch of Broucher, Miniature and Website.", phase: "Pre-launch" },
+  { date: "9th Sept 2026", title: "Registration Opens", desc: "Global registration platform goes live. Early-bird participants receive special recognition at the Mahotsav.", phase: "Phase 1" },
+  { date: "oct 2026", title: "Awareness", desc: "Special activities in Schools, Colleges and Apartments to create awareness on Bhagvadgita Vishwa Mahotsav.", phase: "Phase 1" },
   { date: "20 Dec 2026", title: "Curtain Raiser", desc: "Gita Jayanti — synchronised launch events across 18 countries. Grand Parayana of Chapter 1.", phase: "Phase 1", highlight: true },
-  { date: "Jan 2027", title: "Chapters 2–7 Events", desc: "Six chapter-specific celebrations hosted across India, UK, USA, Australia, Canada, and Germany.", phase: "Phase 2" },
-  { date: "Late Jan 2027", title: "Chapters 8–13 Events", desc: "Six more chapter celebrations in Brazil, Japan, France, South Africa, Russia, and Israel.", phase: "Phase 2" },
-  { date: "Early Feb 2027", title: "Chapters 14–18 Events", desc: "Final chapter events in New Zealand, UAE, Singapore, Kenya, Argentina, and India.", phase: "Phase 2" },
-  { date: "20 Feb 2027", title: "Pilgrims Begin Arriving", desc: "50,000+ registered participants begin arriving at the Mahotsav venue. Accommodation, registration, and orientation.", phase: "Pre-Mahotsav" },
-  { date: "24 Feb 2027", title: "Peetadhipati Sammelanam", desc: "Opening assembly of spiritual heads. The Gita Jnana Sabha begins with inaugural discourses.", phase: "Mahotsav Week" },
   { date: "25 Feb 2027", title: "Youth Gita & Cultural Day", desc: "Full day dedicated to youth programming, classical arts performances, and cultural exhibitions.", phase: "Mahotsav Week" },
-  { date: "26 Feb 2027", title: "Global Gita Connect Day", desc: "Live-streamed chapter recitations connecting all 18 host countries simultaneously.", phase: "Mahotsav Week" },
   { date: "27 Feb 2027", title: "Bhagavad Gita Mahotsav", desc: "The culmination — Grand Parayana of all 18 chapters, Gita Sankalpa, spiritual procession, and closing ceremony.", phase: "Mahotsav", highlight: true },
 ];
 

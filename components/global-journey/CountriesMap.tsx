@@ -25,10 +25,10 @@ export default function CountriesMap() {
       <div className="container-main">
         <div className="relative w-full overflow-hidden rounded-xl shadow-sm">
           <Image
-            src="/18-countries-map.png"
-            alt="Bhagavad Gita Vishwa Mahotsav — 18 Countries"
-            width={1492}
-            height={1054}
+            src="/18-nations.jpg"
+            alt="Bhagavad Gita Vishwa Mahotsav — 18 Nations"
+            width={1280}
+            height={912}
             className="block w-full h-auto"
             priority
           />

@@ -14,7 +14,7 @@ export const globalJourneyPages: Record<string, SimplePageData> = {
     body: [
       "The eighteen host countries of the Bhagavad Gita Vishwa Mahotsav have been selected to represent every inhabited continent and major cultural region of the world — from South Asia to South America, from East Asia to East Africa.",
       "Each country hosts a dedicated chapter event — a multi-day celebration of the assigned chapter through recitation, discourse, cultural performance, and community gathering. These events are not merely symbolic; they are deep, immersive explorations of the Gita's wisdom in their local cultural context.",
-      "The eighteen countries are: India (Chapters 1 & 18), United Kingdom (Chapter 2), United States (Chapter 3), Australia (Chapter 4), Canada (Chapter 5), Germany (Chapter 6), Japan (Chapter 7), Brazil (Chapter 8), South Africa (Chapter 9), France (Chapter 10), Russia (Chapter 11), Singapore (Chapter 12), Israel (Chapter 13), New Zealand (Chapter 14), UAE (Chapter 15), Kenya (Chapter 16), Argentina (Chapter 17).",
+      "The eighteen countries are: India, United States, United Kingdom, Ireland, France, Germany, Italy, Spain, Netherlands, Russia, China, Japan, UAE, Australia, New Zealand, Canada, Brazil, and South Africa.",
       "Each host country chapter event will be live-streamed to the global community and archived as part of the Mahotsav's permanent digital legacy.",
     ],
   },

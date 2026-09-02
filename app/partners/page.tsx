@@ -132,7 +132,7 @@ export default function PartnersPage() {
           <h2 className="section-heading mb-4">Why Partner With Us?</h2>
           <div className="gold-rule mb-6" />
           <p className="text-ink-muted font-sans text-base leading-relaxed">
-            Partnership with the Bhagavad Gita Vishwa Mahotsav is an opportunity to associate your organisation with one of the most significant cultural and spiritual events of our time — reaching over <strong className="text-ink">50,000 physical participants</strong>, <strong className="text-ink">1 million+ virtual viewers</strong>, and a global community of Gita practitioners in <strong className="text-ink">18 countries</strong>.
+            Partnership with the Bhagavad Gita Vishwa Mahotsav is an opportunity to associate your organisation with one of the most significant cultural and spiritual events of our time — reaching over <strong className="text-ink">50,000 physical participants</strong>, <strong className="text-ink">5 million+ virtual viewers</strong>, and a global community of Gita practitioners in <strong className="text-ink">18 countries</strong>.
           </p>
         </div>
       </section>
