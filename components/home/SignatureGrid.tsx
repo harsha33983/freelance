@@ -8,7 +8,7 @@ const cards = [
     icon: Globe,
     number: "18",
     label: "Countries",
-    desc: "A sacred journey spanning eighteen nations, uniting diverse cultures under one eternal text.",
+    desc: "A sacred journey spanning eighteen countries, uniting diverse cultures under one eternal text.",
   },
   {
     icon: BookOpen,

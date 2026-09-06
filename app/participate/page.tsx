@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 const options = [
-  { icon: Globe, title: "Participation", desc: "Join from your country — participate in the 18-nation chapter journey.", href: "/participate/global", highlight: false },
+  { icon: Globe, title: "Participation", desc: "Join from your country — participate in the 18-country chapter journey.", href: "/participate/global", highlight: false },
   { icon: Building2, title: "Institution Participation", desc: "Register your school, university, or organisation as a participant.", href: "/participate/institution", highlight: false },
   { icon: Zap, title: "Youth Participation", desc: "Special registration for ages 15–35 with dedicated Youth Gita programme.", href: "/participate/youth", highlight: false },
   { icon: Heart, title: "Volunteer", desc: "Offer your time and skills to serve the Mahotsav.", href: "/participate/volunteer", highlight: false },

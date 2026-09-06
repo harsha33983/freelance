@@ -10,12 +10,10 @@ export const metadata: Metadata = {
 };
 
 const sections = [
-  { title: "Curtain Raiser", date: "20 Dec 2026", desc: "The global launch event — 18 nations light the flame simultaneously.", href: "/global-journey/curtain-raiser" },
+  { title: "Curtain Raiser", date: "20 Dec 2026", desc: "The global launch event — 18 countries light the flame simultaneously.", href: "/global-journey/curtain-raiser" },
   { title: "18 Countries", date: "Jan–Feb 2027", desc: "One chapter, one country — a sacred geography of wisdom.", href: "/global-journey/18-countries" },
   { title: "18 Chapters", date: "Jan–Feb 2027", desc: "Every chapter of the Gita celebrated in its full depth.", href: "/global-journey/18-chapters" },
   { title: "18 Languages", date: "Jan–Feb 2027", desc: "The Gita's voice resonating across eighteen world languages.", href: "/global-journey/18-languages" },
-  { title: "Vishwa Parayana", date: "27 Feb 2027", desc: "The world's largest Bhagavad Gita recitation.", href: "/global-journey/global-parayana" },
-  { title: "Global Sankalpa", date: "27 Feb 2027", desc: "A collective vow taken by 50,000+ participants.", href: "/global-journey/global-sankalpa" },
   { title: "Road to 27 Feb 2027", date: "Dec 2026 – Feb 2027", desc: "The full timeline of events leading to the Mega Mahotsav.", href: "/global-journey/road-to-mahotsav" },
 ];
 
@@ -24,7 +22,7 @@ export default function GlobalJourneyPage() {
     <>
       <PageHero
         badge="Global Journey"
-        title="A Journey Across 18 Nations"
+        title="A Journey Across 18 Countries"
         subtitle="From the Curtain Raiser to the Mega Mahotsav — a sacred itinerary spanning continents, cultures, and languages."
       />
       <section className="bg-white section-pad">

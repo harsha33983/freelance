@@ -34,8 +34,6 @@ export const navGroups: NavGroup[] = [
       { label: "18 Countries", href: "/global-journey/18-countries" },
       { label: "18 Chapters", href: "/global-journey/18-chapters" },
       { label: "18 Languages", href: "/global-journey/18-languages" },
-      { label: "Global Parayana", href: "/global-journey/global-parayana" },
-      { label: "Global Sankalpa", href: "/global-journey/global-sankalpa" },
       { label: "Road to 27 Feb 2027", href: "/global-journey/road-to-mahotsav" },
     ],
   },

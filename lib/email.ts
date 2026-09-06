@@ -42,7 +42,7 @@ function baseTemplate(content: string): string {
 <body>
   <div class="container">
     <div class="header">
-      <h1>Bhagavad Gita Vishwa Mahotsav</h1>
+      <h1>Bhagavadgita Vishwa Mahotsav</h1>
       <p>2027 &nbsp;•&nbsp; 18 Countries &nbsp;•&nbsp; 18 Chapters &nbsp;•&nbsp; 18 Languages</p>
     </div>
     <div class="gold-bar"></div>

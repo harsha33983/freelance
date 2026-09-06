@@ -17,7 +17,7 @@ const pillars = [
   {
     icon: Globe,
     title: "Foster Global Unity",
-    desc: "Use the Gita's universal philosophy to build bridges across nations, cultures, and communities, demonstrating that the human experience is fundamentally one.",
+    desc: "Use the Gita's universal philosophy to build bridges across countries, cultures, and communities, demonstrating that the human experience is fundamentally one.",
   },
   {
     icon: Heart,

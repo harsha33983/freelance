@@ -12,7 +12,7 @@ const legacyItems = [
   "Establishment of an annual Bhagavad Gita Vishwa Diwas — a global day of Gita recitation and celebration",
   "A permanent Gita Research & Resource Centre housing the world's largest collection of Gita translations, commentaries, and multimedia resources",
   "The Global Gita in Schools Initiative — introducing Gita-based character education programmes in schools across participating countries",
-  "The Mahotsav Youth Network — a global community of young Gita practitioners connected across 18 nations",
+  "The Mahotsav Youth Network — a global community of young Gita practitioners connected across 18 countries",
   "A multilingual digital archive of the entire Mahotsav — preserved for future generations",
   "Community Gita Parayanas in every participating country, continuing beyond the Mahotsav as sustained practice",
   "A Gita Scholarship Fund supporting research and translation of the Gita into additional world languages",

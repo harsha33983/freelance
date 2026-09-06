@@ -36,7 +36,7 @@ const values = [
   {
     icon: Music,
     title: "Harmony",
-    desc: "We celebrate the diversity of India's and the world's spiritual traditions as expressions of one universal truth. We actively cultivate harmony — between traditions, between nations, between participants.",
+    desc: "We celebrate the diversity of India's and the world's spiritual traditions as expressions of one universal truth. We actively cultivate harmony — between traditions, between countries, between participants.",
   },
 ];
 

@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   keywords: [
     "Bhagavad Gita",
     "Vishwa Mahotsav 2027",
-    "Gita Mahotsav",
+    "Bhagavadgita Vishwa Mahotsav",
     "Global Gita event",
     "ISKCON",
     "spiritual event 2027",

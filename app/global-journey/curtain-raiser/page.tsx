@@ -4,7 +4,7 @@ import GoldDivider from "@/components/ui/GoldDivider";
 
 export const metadata: Metadata = {
   title: "Curtain Raiser — 20 December 2026",
-  description: "The Curtain Raiser event on 20 December 2026 — Gita Jayanti — launching the Bhagavad Gita Vishwa Mahotsav 2027 across 18 nations simultaneously.",
+  description: "The Curtain Raiser event on 20 December 2026 — Gita Jayanti — launching the Bhagavad Gita Vishwa Mahotsav 2027 across 18 countries simultaneously.",
 };
 
 export default function CurtainRaiserPage() {
@@ -13,7 +13,7 @@ export default function CurtainRaiserPage() {
       <PageHero
         badge="20 December 2026"
         title="Curtain Raiser"
-        subtitle="On Gita Jayanti — the auspicious day commemorating the divine revelation of the Bhagavad Gita — communities across 18 nations will ignite the flame of the Vishwa Mahotsav simultaneously."
+        subtitle="On Gita Jayanti — the auspicious day commemorating the divine revelation of the Bhagavad Gita — communities across 18 countries will ignite the flame of the Vishwa Mahotsav simultaneously."
       />
       <section className="bg-white section-pad">
         <div className="container-main max-w-4xl space-y-8 text-ink-body font-sans text-base leading-relaxed">
@@ -23,7 +23,6 @@ export default function CurtainRaiserPage() {
             {[
               "Light a ceremonial lamp (deepa) as a symbol of the Gita's light entering the world",
               "Read aloud the Mahotsav Declaration — a collective statement of intent and aspiration",
-              "Register their participation in the Global Sankalpa (collective vow)",
               "Inaugurate their chapter-specific local events leading up to the Mega Mahotsav",
             ].map((item, i) => (
               <li key={i} className="flex items-start gap-3">

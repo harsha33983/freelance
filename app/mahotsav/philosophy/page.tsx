@@ -21,7 +21,7 @@ export default function PhilosophyPage() {
             {
               num: "01",
               title: "Not a Religious Event — A Universal One",
-              body: "The Bhagavad Gita does not belong to any single religion, sect, or community. It is a universal text addressing the deepest questions of human existence. The Mahotsav reflects this universality — it is open to every person, of every faith, from every nation, who seeks meaning, purpose, and inner peace.",
+              body: "The Bhagavad Gita does not belong to any single religion, sect, or community. It is a universal text addressing the deepest questions of human existence. The Mahotsav reflects this universality — it is open to every person, of every faith, from every country, who seeks meaning, purpose, and inner peace.",
             },
             {
               num: "02",

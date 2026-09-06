@@ -9,7 +9,7 @@ export default function ZonesPage() {
       subtitle="Beyond the main stage and programme — a rich landscape of cultural, spiritual, and contemplative spaces."
       body={[
         "The Mahotsav venue is divided into distinct zones, each offering a different facet of the Gita's multi-dimensional wisdom.",
-        "The Cultural Pavilion houses the Art of the Gita Exhibition, live folk arts performances, traditional crafts, and a global food court celebrating the cuisines of all 18 participating nations.",
+        "The Cultural Pavilion houses the Art of the Gita Exhibition, live folk arts performances, traditional crafts, and a global food court celebrating the cuisines of all 18 participating countries.",
         "The Spiritual Marketplace features over 200 exhibitors — publishers, NGOs, spiritual institutions, and Gita-inspired social enterprises — from across India and the world.",
         "The Contemplative Garden is a large, beautifully landscaped space with walking meditation paths, sitting areas, water features, and installations inspired by the Gita's teachings on nature and the divine.",
         "The Wellness Village offers daily yoga classes, Ayurvedic consultations, and guided meditation sessions from sunrise to sunset throughout the Mahotsav.",

@@ -5,7 +5,7 @@ import CountriesMap from "@/components/global-journey/CountriesMap";
 export const metadata: Metadata = {
   title: "18 Countries",
   description:
-    "Eighteen nations joining one global Bhagavad Gita journey as part of Vishwa Mahotsav 2027.",
+    "Eighteen countries joining one global Bhagavad Gita journey as part of Vishwa Mahotsav 2027.",
 };
 
 export default function CountriesPage() {
