@@ -23,7 +23,7 @@ export default function CurtainRaiserPage() {
             {[
               "Light a ceremonial lamp (deepa) as a symbol of the Gita's light entering the world",
               "Read aloud the Mahotsav Declaration — a collective statement of intent and aspiration",
-              "Inaugurate their chapter-specific local events leading up to the Mega Mahotsav",
+              "Inaugurate their chapter-specific local events leading up to the Bhagavad Gita Vishwa Mahotsav",
             ].map((item, i) => (
               <li key={i} className="flex items-start gap-3">
                 <span className="text-gold font-bold flex-shrink-0">▸</span>

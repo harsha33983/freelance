@@ -40,7 +40,7 @@ export default function MahotsavOverviewPage() {
               Structured around the sacred number <span className="text-gold font-semibold">18</span> — eighteen countries, eighteen chapters, eighteen languages. <strong className="text-ink">Bhagavad Gita Vishwa Mahotsav on 27 February 2027</strong>.
             </p>
             <p>
-              The event is anchored by the <strong className="text-ink">Curtain Raiser</strong> on 20 December 2026 — the globally-observed Gita Jayanti date — followed by chapter-specific events hosted across participating countries, and finally the convergence of all streams into the Mega Mahotsav.
+              The event is anchored by the <strong className="text-ink">Curtain Raiser</strong> on 20 December 2026 — the globally-observed Gita Jayanti date — followed by chapter-specific events hosted across participating countries, and finally the convergence of all streams into the Bhagavad Gita Vishwa Mahotsav.
             </p>
             <p>
               At its core, the Mahotsav aspires to do three things: facilitate mass <span className="text-gold font-semibold">Recitation</span> of the Gita, deepen collective <span className="text-gold font-semibold">Realization</span> of its teachings, and catalyse individual and social <span className="text-gold font-semibold">Transformation</span>.

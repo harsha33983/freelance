@@ -27,7 +27,7 @@ const steps = [
     icon: Star,
     phase: "Phase 3",
     date: "27 February 2027",
-    title: "Bhagavad Gita Mahotsav",
+    title: "Bhagavad Gita Vishwa Mahotsav",
     desc: "The grand culmination — 50,000+ pilgrims, global spiritual leaders, and seekers converge for a three-day celebration of the Bhagavad Gita.",
     href: "/programme/mega-mahotsav",
     cta: "Explore the Programme",

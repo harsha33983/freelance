@@ -55,7 +55,7 @@ export const navGroups: NavGroup[] = [
     href: "/programme",
     children: [
       { label: "Curtain Raiser", href: "/programme/curtain-raiser" },
-      { label: "Mega Mahotsav", href: "/programme/mega-mahotsav" },
+      { label: "Bhagavad Gita Vishwa Mahotsav", href: "/programme/mega-mahotsav" },
       { label: "Grand Parayana", href: "/programme/grand-parayana" },
       { label: "Youth Gita", href: "/programme/youth-gita" },
       { label: "Global Connect", href: "/programme/global-connect" },

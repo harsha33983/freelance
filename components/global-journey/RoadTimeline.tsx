@@ -8,7 +8,7 @@ const events = [
   { date: "oct 2026", title: "Awareness", desc: "Special activities in Schools, Colleges and Apartments to create awareness on Bhagvadgita Vishwa Mahotsav.", phase: "Phase 1" },
   { date: "20 Dec 2026", title: "Curtain Raiser", desc: "Gita Jayanti — synchronised launch events across 18 countries. Grand Parayana of Chapter 1.", phase: "Phase 1", highlight: true },
   { date: "25 Feb 2027", title: "Youth Gita & Cultural Day", desc: "Full day dedicated to youth programming, classical arts performances, and cultural exhibitions.", phase: "Mahotsav Week" },
-  { date: "27 Feb 2027", title: "Bhagavad Gita Mahotsav", desc: "The culmination — Grand Parayana of all 18 chapters, Gita Sankalpa, spiritual procession, and closing ceremony.", phase: "Mahotsav", highlight: true },
+  { date: "27 Feb 2027", title: "Bhagavad Gita Vishwa Mahotsav", desc: "The culmination — Grand Parayana of all 18 chapters, Gita Sankalpa, spiritual procession, and closing ceremony.", phase: "Mahotsav", highlight: true },
 ];
 
 export default function RoadTimeline() {

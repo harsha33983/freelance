@@ -17,7 +17,7 @@ const tiers = [
     price: "₹5 Cr+",
     highlight: true,
     benefits: [
-      "Exclusive naming rights for the Mega Mahotsav",
+      "Exclusive naming rights for the Bhagavad Gita Vishwa Mahotsav",
       "Primary logo placement on all materials",
       "Speaking slot at the inaugural ceremony",
       "VIP pavilion at the venue for 200 guests",

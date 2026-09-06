@@ -14,7 +14,7 @@ const sections = [
   { title: "18 Countries", date: "Jan–Feb 2027", desc: "One chapter, one country — a sacred geography of wisdom.", href: "/global-journey/18-countries" },
   { title: "18 Chapters", date: "Jan–Feb 2027", desc: "Every chapter of the Gita celebrated in its full depth.", href: "/global-journey/18-chapters" },
   { title: "18 Languages", date: "Jan–Feb 2027", desc: "The Gita's voice resonating across eighteen world languages.", href: "/global-journey/18-languages" },
-  { title: "Road to 27 Feb 2027", date: "Dec 2026 – Feb 2027", desc: "The full timeline of events leading to the Mega Mahotsav.", href: "/global-journey/road-to-mahotsav" },
+  { title: "Road to 27 Feb 2027", date: "Dec 2026 – Feb 2027", desc: "The full timeline of events leading to the Bhagavad Gita Vishwa Mahotsav.", href: "/global-journey/road-to-mahotsav" },
 ];
 
 export default function GlobalJourneyPage() {
@@ -23,7 +23,7 @@ export default function GlobalJourneyPage() {
       <PageHero
         badge="Global Journey"
         title="A Journey Across 18 Countries"
-        subtitle="From the Curtain Raiser to the Mega Mahotsav — a sacred itinerary spanning continents, cultures, and languages."
+        subtitle="From the Curtain Raiser to the Bhagavad Gita Vishwa Mahotsav — a sacred itinerary spanning continents, cultures, and languages."
       />
       <section className="bg-white section-pad">
         <div className="container-main grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

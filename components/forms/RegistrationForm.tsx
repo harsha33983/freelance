@@ -17,7 +17,7 @@ const formSchema = z.object({
   country: z.string().min(1, "Country required"),
   city: z.string().min(1, "City required"),
   registrationType: z.enum(["Single", "Group", "Institute", "Foreigner"], {
-    errorMap: () => ({ message: "Please select a registration type" })
+    message: "Please select a registration type"
   }),
   noOfPersons: z.coerce.number().min(1, "At least 1 person required"),
   assistance: z.array(z.string()).optional(),
@@ -37,7 +37,7 @@ export default function RegistrationForm({ isDonorFlow = false }: { isDonorFlow?
   const [loading, setLoading] = useState(false);
 
   const form = useForm<FormData>({ 
-    resolver: zodResolver(formSchema),
+    resolver: zodResolver(formSchema) as any,
     mode: "onSubmit",
     defaultValues: {
       assistance: [],
