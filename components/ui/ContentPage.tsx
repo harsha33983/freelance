@@ -1,7 +1,6 @@
 import PageHero from "@/components/ui/PageHero";
 import GoldDivider from "@/components/ui/GoldDivider";
 import Link from "next/link";
-import Image from "next/image";
 
 interface ContentPageProps {
   badge: string;
