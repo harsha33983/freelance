@@ -21,7 +21,7 @@ export default function FourPathwaysPage() {
 
           <div className="my-10 rounded-lg overflow-hidden shadow-md">
             <Image 
-              src="/vedas.jpg" 
+              src="/four-vedas.jpg" 
               alt="The Four Vedas - Sacred Entrances" 
               width={1200} 
               height={800} 

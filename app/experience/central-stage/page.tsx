@@ -13,6 +13,7 @@ export default function CentralStagePage() {
         "The stage is surrounded by a recitation ground accommodating 50,000 participants in concentric circles — a layout that creates a sense of shared sacred space and collective focus.",
         "State-of-the-art audio, lighting, and live-streaming infrastructure ensure that every word, every verse, and every moment is experienced with full clarity by all participants — whether present in person or watching from anywhere in the world.",
       ]}
+      image="/central-stage-new.jpg"
     />
   );
 }

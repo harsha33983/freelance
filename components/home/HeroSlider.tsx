@@ -54,7 +54,7 @@ const slides = [
     bg: "from-black/75 via-black/50 to-transparent",
     accent: "#D4AF37",
     headline: "18 Countries.\n18 Chapters.\n18 Languages.",
-    sub: "One Gita. One Voice. One Global Consciousness.",
+    sub: "One Gita. One World. One Universal Message.",
   },
   {
     id: 3,
