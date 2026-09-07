@@ -33,12 +33,12 @@ export default function LegacyPage() {
         <div className="container-main max-w-4xl">
           <div className="mb-12 text-ink-body font-sans text-base leading-relaxed space-y-5">
             <p>Great spiritual events leave lasting imprints. The <strong className="text-ink">Bhagavad Gita Vishwa Mahotsav 2027</strong> is conceived with this long-term vision at its centre — every component of the Mahotsav is designed to seed an institution, a community, or a practice that will continue to grow for years and decades after the event.</p>
-            <p>The organising committee has identified  specific legacy initiatives — one for each of the nine months between the Curtain Raiser and the Mahotsav — each of which will be formally launched during the Bhagavad Gita Vishwa Mahotsav on 27 February 2027.</p>
+            <p>The organising committee has identified specific legacy initiatives, each of which will be formally launched during the Bhagavad Gita Vishwa Mahotsav on 27 February 2027.</p>
           </div>
 
           <GoldDivider className="mb-12" />
 
-          <h2 className="section-heading mb-8">Nine Legacy Initiatives</h2>
+          <h2 className="section-heading mb-8">Legacy Initiatives</h2>
           <div className="space-y-5">
             {legacyItems.map((item, i) => (
               <div key={i} className="flex items-start gap-4 group">
