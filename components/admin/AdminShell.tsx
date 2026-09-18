@@ -15,7 +15,8 @@ const NAV = [
   { href: "/admin/partnerships", label: "Partnerships", icon: Handshake },
   { href: "/admin/contacts", label: "Contact Messages", icon: MessageSquare },
   { href: "/admin/news", label: "News Articles", icon: Newspaper },
-  { href: "/admin/videos", label: "Videos", icon: Video },
+  { href: "/admin/videos", label: "Videos (YouTube)", icon: Video },
+  { href: "/admin/r2-videos", label: "Video Storage (R2)", icon: Video },
   { href: "/admin/gallery", label: "Gallery", icon: Image },
   { href: "/admin/press-kit", label: "Media Coverage", icon: Package },
 ];
