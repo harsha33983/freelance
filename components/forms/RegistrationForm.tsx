@@ -12,14 +12,14 @@ import ReceiptTicket from "@/components/ui/ReceiptTicket";
 // ── Schemas ────────────────────────────────────────────────────────────────
 const formSchema = z.object({
   name: z.string().min(2, "Full name is required"),
-  email: z.string().email("Valid email required"),
+  email: z.string().email("Valid email required").optional().or(z.literal('')),
   phone: z.string().min(7, "Phone number required"),
   country: z.string().min(1, "Country required"),
   city: z.string().min(1, "City required"),
   registrationType: z.enum(["Single", "Group", "Institute", "Foreigner"], {
     message: "Please select a registration type"
   }),
-  noOfPersons: z.coerce.number().min(1, "At least 1 person required"),
+  noOfPersons: z.coerce.number().optional(),
   assistance: z.array(z.string()).optional(),
   registerForEvent: z.array(z.string()).min(1, "Select at least one event"),
 });
@@ -90,7 +90,7 @@ export default function RegistrationForm({ isDonorFlow = false }: { isDonorFlow?
         <ReceiptTicket
           registrationId={submittedData.id}
           name={submittedData.name}
-          email={submittedData.email}
+          email={submittedData.email || ""}
           type={submittedData.registrationType}
           country={submittedData.country}
         />
@@ -133,7 +133,7 @@ export default function RegistrationForm({ isDonorFlow = false }: { isDonorFlow?
             </div>
             <div>
               <label className="block text-xs font-semibold font-sans text-ink tracking-wider uppercase mb-1.5">
-                Email Address *
+                Email Address
               </label>
               <input
                 {...register("email")}
@@ -160,7 +160,7 @@ export default function RegistrationForm({ isDonorFlow = false }: { isDonorFlow?
             </div>
             <div>
               <label className="block text-xs font-semibold font-sans text-ink tracking-wider uppercase mb-1.5">
-                No of Persons *
+                No of Persons
               </label>
               <input
                 {...register("noOfPersons")}

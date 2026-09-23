@@ -6,9 +6,9 @@ import { z } from "zod";
 const schema = z.object({
   registrationType: z.enum(["Single", "Group", "Institute", "Foreigner"]),
   name: z.string().min(2),
-  email: z.string().email(),
+  email: z.string().email().optional().or(z.literal('')).default(''),
   phone: z.string().min(7),
-  noOfPersons: z.number().min(1),
+  noOfPersons: z.number().optional().default(1),
   country: z.string().min(1),
   city: z.string().min(1),
   assistance: z.array(z.string()).optional().default([]),
