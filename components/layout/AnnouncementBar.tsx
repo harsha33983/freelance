@@ -7,7 +7,6 @@ export default function AnnouncementBar() {
     "50,000+ PARTICIPANTS ACROSS 18 COUNTRIES",
     "18 CHAPTERS • 18 LANGUAGES • ONE GITA",
     "SREE MEDIA ",
-    "SKYLINE MEDIA ",
     "PROPEL FORGE",
     "FIRSTLOOKS EVENTS ",
   ];
