@@ -1,18 +1,25 @@
 import type { Metadata } from "next";
-import ContentPage from "@/components/ui/ContentPage";
-export const metadata: Metadata = { title: "Organising Committee" };
+import PageHero from "@/components/ui/PageHero";
+import TeamSection from "@/components/team/TeamSection";
+
+export const metadata: Metadata = {
+  title: "Organising Committee | Bhagavadgita Vishwa Mahotsav 2027",
+  description:
+    "Meet the Organising Committee leadership for the Bhagavadgita Vishwa Mahotsav 2027: Godawarthy Sasidhar, Daitha Susheel Kumar, Vemuri Shravani, Pyreddy Krishna Reddy, Malladi Anand, and K. Satya Prasad.",
+};
+
 export default function OrganisingCommitteePage() {
   return (
-    <ContentPage
-      badge="Organising Committee"
-      title="The Organising Committee"
-      subtitle="The dedicated team of professionals and volunteers bringing the Mahotsav to life."
-      body={[
-        "The Organising Committee comprises over 200 dedicated professionals and senior volunteers responsible for the planning, execution, and delivery of the Bhagavad Gita Vishwa Mahotsav 2027.",
-        "The Committee is organised into specialised sub-committees covering: Programme & Content, Venue & Logistics, Registration & Participant Services, Media & Communications, Technology & Digital, Partnerships & Sponsorship, International Relations, Youth & Education, and Finance & Governance.",
-        "Each sub-committee is led by an experienced professional with deep expertise in their field, supported by a team of dedicated staff and volunteers.",
-        "We are deeply grateful to the many hundreds of volunteers — most of them Gita practitioners themselves — who have offered their time, skills, and energy in the spirit of karma yoga.",
-      ]}
-    />
+    <main className="min-h-screen bg-white">
+      {/* Top Page Hero */}
+      <PageHero
+        badge="Organising Committee"
+        title="The Organising Committee"
+        subtitle="The dedicated leadership team of experienced professionals and domain specialists bringing the Bhagavadgita Vishwa Mahotsav 2027 to life."
+      />
+
+      {/* Modern, Premium Team Section with Expandable Profiles */}
+      <TeamSection />
+    </main>
   );
 }

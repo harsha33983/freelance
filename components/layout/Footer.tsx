@@ -24,6 +24,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm text-ink/80">
               <li><Link href="/" className="hover:text-gold transition-colors">Home</Link></li>
               <li><Link href="/about" className="hover:text-gold transition-colors">About</Link></li>
+              <li><Link href="/connect" className="hover:text-gold transition-colors">Connect With Us</Link></li>
               <li><Link href="/global-journey/18-countries" className="hover:text-gold transition-colors">18 Countries</Link></li>
               <li><Link href="/participate/register" className="hover:text-gold transition-colors">Register</Link></li>
             </ul>

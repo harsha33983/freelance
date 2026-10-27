@@ -102,6 +102,10 @@ export const navGroups: NavGroup[] = [
     ],
   },
   {
+    label: "Connect With Us",
+    href: "/connect",
+  },
+  {
     label: "About",
     href: "/about",
     children: [

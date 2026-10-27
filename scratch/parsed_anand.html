@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Malladi Anand | Team Profile</title>
+<meta name="description" content="Malladi Anand — Events and Creative Professional, Founder & Director of First Looks Events Pvt Ltd.">
+<style>
+:root {
+  --maroon:#681b1b;
+  --red:#a12b22;
+  --gold:#c99a43;
+  --gold2:#ead39a;
+  --cream:#fbf3df;
+  --paper:#fffaf0;
+  --ink:#241d18;
+  --muted:#6e6255;
+  --line:#ead9b5;
+  --shadow:0 18px 55px rgba(75,37,12,.13);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;color:var(--ink);font-family:Inter,Segoe UI,Arial,sans-serif;line-height:1.6;
+  background:
+    radial-gradient(circle at 10% 15%,rgba(201,154,67,.13),transparent 25%),
+    radial-gradient(circle at 90% 50%,rgba(104,27,27,.06),transparent 28%),var(--cream);
+}
+.container{width:min(1180px,92%);margin:auto}
+.nav{position:sticky;top:0;z-index:10;background:rgba(251,243,223,.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(201,154,67,.25)}
+.nav-in{min-height:68px;display:flex;align-items:center;justify-content:space-between}
+.brand{font-family:Georgia,serif;font-weight:700;color:var(--maroon);letter-spacing:.06em}
+.nav a{color:var(--muted);font-size:.9rem;text-decoration:none;margin-left:24px}
+.nav a:hover{color:var(--maroon)}
+
+.hero{position:relative;overflow:hidden;background:linear-gradient(125deg,#681b1b,#7e201e 52%,#4e1517);color:#fff7e6;padding:78px 0}
+.hero:before{content:"";position:absolute;width:560px;height:560px;border:1px solid rgba(234,211,154,.28);border-radius:50%;right:-220px;top:-230px}
+.hero:after{content:"ॐ";position:absolute;right:6%;bottom:-90px;font:300 270px Georgia,serif;color:rgba(234,211,154,.06)}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.15fr .85fr;gap:70px;align-items:center}
+.kicker{color:#efd596;text-transform:uppercase;letter-spacing:.18em;font-size:.76rem;font-weight:800}
+h1{font:700 clamp(3rem,6vw,5.5rem)/.98 Georgia,serif;margin:12px 0 18px}
+.hero p{font-size:1.15rem;max-width:720px;color:#f7e8c9}
+.badge{display:inline-block;margin-top:22px;padding:12px 18px;border:1px solid rgba(234,211,154,.55);border-radius:999px;color:#ffe5a7;font-weight:750}
+.photo-wrap{justify-self:end;position:relative;width:min(360px,100%)}
+.photo-wrap:before{content:"";position:absolute;inset:-16px;border:1px solid rgba(234,211,154,.55);border-radius:50%;transform:rotate(-6deg)}
+.photo-wrap img{width:100%;display:block;position:relative;border-radius:50%;border:7px solid #fff8e8;box-shadow:0 28px 70px rgba(0,0,0,.3)}
+
+.section{padding:86px 0}
+.section-head{max-width:800px;margin-bottom:34px}
+.eyebrow{color:var(--red);font-size:.76rem;font-weight:850;text-transform:uppercase;letter-spacing:.15em}
+h2{font:700 clamp(2rem,4vw,3.2rem)/1.08 Georgia,serif;color:var(--maroon);margin:8px 0 12px}
+.lead{color:var(--muted);font-size:1.04rem}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.card{background:rgba(255,250,240,.88);border:1px solid var(--line);border-radius:22px;padding:30px;box-shadow:var(--shadow)}
+.card h3{font:700 1.35rem Georgia,serif;color:var(--maroon);margin:0 0 8px}
+.role{color:var(--red);font-weight:800}
+.meta{font-size:.9rem;color:var(--muted)}
+.card p{margin:8px 0}
+.pills{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}
+.pill{padding:8px 12px;border:1px solid var(--line);border-radius:999px;background:#fff9ed;color:var(--maroon);font-size:.88rem;font-weight:700}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
+.stat{padding:22px;border:1px solid var(--line);background:#fffaf0;border-radius:18px}
+.stat b{display:block;font:700 2rem Georgia,serif;color:var(--maroon)}
+.stat span{color:var(--muted);font-size:.9rem}
+.feature{background:linear-gradient(135deg,#fff9ea,#f2dfb4);border:1px solid var(--gold2);border-radius:26px;padding:34px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.feature:after{content:"✦";position:absolute;right:28px;top:8px;font-size:100px;color:rgba(104,27,27,.05)}
+.feature h3{font:700 1.45rem Georgia,serif;color:var(--maroon);margin:0 0 10px}
+.feature strong{color:var(--red)}
+.list{padding-left:20px;margin:10px 0}
+.list li{margin:8px 0}
+.highlight{margin-top:20px;background:var(--maroon);color:#fff3d9;padding:20px 22px;border-radius:18px}
+.highlight b{color:#efd28f}
+.cta{background:var(--maroon);color:#fff5df;border-radius:28px;padding:42px;display:flex;align-items:center;justify-content:space-between;gap:30px}
+.cta h2{color:#fff1d0;margin:0 0 8px}
+.cta p{color:#ead7b1;max-width:700px}
+.btn{display:inline-block;background:#efd08b;color:var(--maroon);font-weight:850;padding:13px 20px;border-radius:999px}
+footer{text-align:center;color:var(--muted);font-size:.86rem;padding:28px 0 44px}
+.ornament{text-align:center;color:var(--gold);font-size:1.7rem;margin-top:16px}
+@media(max-width:820px){
+ .nav-links{display:none} .hero{padding:55px 0} .hero-grid,.grid{grid-template-columns:1fr}
+ .photo-wrap{justify-self:start;width:min(300px,75vw)} .stats{grid-template-columns:1fr}
+ .cta{display:block;padding:30px}
+ .cta .btn{margin-top:16px}
+}
+</style>
+</head>
+<body>
+<nav class="nav">
+ <div class="container nav-in">
+  <div class="brand">TEAM • PROFILE</div>
+  <div class="nav-links">
+   <a href="#profile">Profile</a><a href="#experience">Experience</a><a href="#achievements">Achievements</a>
+  </div>
+ </div>
+</nav>
+
+<header class="hero" id="profile">
+ <div class="container hero-grid">
+  <div>
+   <div class="kicker">Events • Creative • Strategy • Execution</div>
+   <h1>Malladi<br>Anand</h1>
+   <p><b>14 years</b> experienced Events &amp; Creative Professional with leadership in event planning and execution. As Founder &amp; Director of <b>First Looks Events Pvt. Ltd.</b>, he brings a strong entrepreneurial approach to events.</p>
+   <div class="badge">Bhagavadgita Vishwa Mahotsav–2027&nbsp; • &nbsp;Event Strategy, Management &amp; Marketing</div>
+  </div>
+  <div class="photo-wrap"><img src="[IMAGE]" alt="Portrait of Malladi Anand"></div>
+ </div>
+</header>
+
+<main>
+<section class="section">
+ <div class="container">
+  <div class="section-head">
+   <div class="eyebrow">Profile at a glance</div>
+   <h2>Creative thinking. Event discipline. Memorable execution.</h2>
+   <p class="lead">A hands-on events professional combining strategy, creative planning, management and on-ground execution across a broad range of live experiences.</p>
+  </div>
+  <div class="grid">
+   <div class="card">
+    <h3>Areas of expertise</h3>
+    <div class="pills">
+     <span class="pill">Event Strategy</span><span class="pill">Creative Planning</span>
+     <span class="pill">Event Management</span><span class="pill">Execution</span>
+    </div>
+   </div>
+   <div class="feature">
+    <h3>Key role — Bhagavadgita Vishwa Mahotsav–2027</h3>
+    <p><strong>Event Strategy, Management &amp; Marketing</strong></p>
+    <p>Bringing event planning, creative direction, operational coordination and marketing experience to a major spiritual-cultural event.</p>
+   </div>
+  </div>
+  <div class="stats">
+   <div class="stat"><b>14 Years</b><span>Events &amp; creative experience</span></div>
+   <div class="stat"><b>1500+</b><span>Projects completed</span></div>
+   <div class="stat"><b>1400+</b><span>Happy clients</span></div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="experience">
+ <div class="container">
+  <div class="section-head"><div class="eyebrow">Professional experience</div><h2>Founder-led event expertise.</h2></div>
+  <div class="card">
+   <h3><span class="role">Founder &amp; Director</span> — FIRST LOOKS EVENTS PVT LTD</h3>
+   <p class="meta">Events • Creative Planning • Production • Operations</p>
+   <div class="grid" style="margin-top:22px">
+    <div>
+     <p>Coordinated <b>Social Events, Corporate Events, Musical Events and Fashion Events.</b></p>
+     <p>Organized event planning, designing and development.</p>
+    </div>
+    <div>
+     <p>Handled artist management.</p>
+     <p>Managed attendee management on-site.</p>
+     <p>Led operations and event execution.</p>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="achievements">
+ <div class="container">
+  <div class="section-head"><div class="eyebrow">Key achievements</div><h2>A high-volume track record of successful events.</h2></div>
+  <div class="grid">
+   <div class="feature">
+    <h3>1500+ projects completed</h3>
+    <p>Extensive experience delivering events from planning and design through on-site operations and final execution.</p>
+   </div>
+   <div class="feature">
+    <h3>1400+ happy clients</h3>
+    <p>A client-focused approach built around reliable coordination, creative solutions and smooth event delivery.</p>
+   </div>
+  </div>
+  <div style="height:24px"></div>
+  <div class="card">
+   <h3>Event portfolio highlights</h3>
+   <ul class="list">
+    <li>Center Stage events</li>
+    <li>New Year events</li>
+    <li>Holi Carnivals</li>
+    <li>Celebrities Events</li>
+    <li>Social and corporate events</li>
+    <li>Musical and fashion events</li>
+   </ul>
+   <div class="highlight"><b>Strength:</b> Turning event concepts into coordinated, audience-ready experiences through strategy, creative planning, management and execution.</div>
+  </div>
+ </div>
+</section>
+
+<section class="section">
+ <div class="container">
+  <div class="cta">
+   <div>
+    <div class="eyebrow" style="color:#efd596">Team leadership</div>
+    <h2>Events designed with purpose.</h2>
+    <p>Malladi Anand adds entrepreneurial energy and practical event-management experience to the team, with a proven record across large volumes of projects and diverse event formats.</p>
+   </div>
+   <a class="btn" href="#profile">Back to profile ↑</a>
+  </div>
+  <div class="ornament">❈ ॐ ❈</div>
+ </div>
+</section>
+</main>
+<footer>© 2026 Team Profile • Malladi Anand</footer>
+</body>
+</html>

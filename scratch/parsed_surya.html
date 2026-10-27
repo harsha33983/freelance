@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>K. Satya Prasad | Entrepreneur & Business Leader</title>
+<style>
+:root{--maroon:#651919;--red:#9d2a21;--gold:#c99a45;--gold2:#ead49d;--cream:#fbf3df;--paper:#fffaf0;--ink:#29211b;--muted:#6d6154}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:Inter,Segoe UI,Arial,sans-serif;line-height:1.6}
+.container{width:min(1180px,92%);margin:auto}.nav{position:sticky;top:0;z-index:20;background:rgba(251,243,223,.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(201,154,69,.3)}
+.navin{min-height:68px;display:flex;align-items:center;justify-content:space-between}.brand{font:700 20px Georgia,serif;color:var(--maroon);letter-spacing:.05em}
+.nav a{margin-left:23px;color:var(--muted);font-size:14px;text-decoration:none}.nav a:hover{color:var(--maroon)}
+.hero{position:relative;overflow:hidden;padding:78px 0;background:linear-gradient(125deg,#651919,#7c211d 55%,#511516);color:#fff7e7}
+.hero:before{content:"";position:absolute;width:620px;height:620px;border:1px solid rgba(234,212,157,.3);border-radius:50%;right:-250px;top:-300px}
+.hero:after{content:"ॐ";position:absolute;right:6%;bottom:-120px;font:300 300px Georgia,serif;color:rgba(234,212,157,.055)}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.15fr .85fr;gap:70px;align-items:center}
+.kicker,.eyebrow{color:#efd494;text-transform:uppercase;letter-spacing:.16em;font-size:12px;font-weight:850}h1{font:700 clamp(44px,6vw,78px)/.96 Georgia,serif;margin:13px 0 18px}
+.hero p{font-size:18px;max-width:780px;color:#f8e7c4}.hero p b{color:#ffe09c}
+.badge{display:inline-block;margin-top:22px;padding:12px 18px;border:1px solid rgba(234,212,157,.55);border-radius:999px;color:#ffe3a2;font-weight:800}
+.photo{justify-self:end;width:min(320px,100%);position:relative}.photo:before{content:"";position:absolute;inset:-15px;border:1px solid rgba(234,212,157,.55);border-radius:30px;transform:rotate(-4deg)}
+.photo img{position:relative;width:100%;display:block;border-radius:25px;border:6px solid #fff8e9;box-shadow:0 28px 70px rgba(0,0,0,.3)}
+.section{padding:84px 0}h2{font:700 clamp(32px,4vw,51px)/1.08 Georgia,serif;color:var(--maroon);margin:8px 0 13px}.lead{color:var(--muted);font-size:17px;max-width:860px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.card{background:rgba(255,250,240,.9);border:1px solid #ead9b6;border-radius:22px;padding:30px;box-shadow:0 18px 55px rgba(75,37,12,.11)}
+.card h3,.feature h3{font:700 22px Georgia,serif;color:var(--maroon);margin:0 0 9px}.card p{margin:8px 0}
+.feature{background:linear-gradient(135deg,#fff9ea,#f1dfb7);border:1px solid var(--gold2);border-radius:26px;padding:32px;box-shadow:0 18px 55px rgba(75,37,12,.11);position:relative;overflow:hidden}
+.feature:after{content:"✦";position:absolute;right:25px;top:2px;font-size:100px;color:rgba(101,25,25,.05)}.feature strong{color:var(--red)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-top:24px}.stat{padding:22px;background:#fffaf0;border:1px solid #ead9b6;border-radius:18px}.stat b{display:block;font:700 28px Georgia,serif;color:var(--maroon)}.stat span{font-size:13px;color:var(--muted)}
+.timeline{position:relative;margin-top:30px;padding-left:28px}.timeline:before{content:"";position:absolute;left:7px;top:8px;bottom:8px;width:2px;background:#d7bd83}
+.item{position:relative;margin-bottom:20px;background:#fffaf0;border:1px solid #ead9b6;border-radius:18px;padding:21px 23px}.item:before{content:"";position:absolute;left:-28px;top:28px;width:12px;height:12px;background:var(--red);border:4px solid var(--cream);border-radius:50%}
+.item h3{font:700 19px Georgia,serif;color:var(--maroon);margin:0}.item .date{color:var(--red);font-size:13px;font-weight:800}
+.ventures{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:28px}.venture{background:#fffaf0;border:1px solid #ead9b6;border-radius:20px;padding:23px;box-shadow:0 12px 35px rgba(75,37,12,.08)}.venture h3{font:700 19px Georgia,serif;color:var(--maroon);margin:0 0 7px}.tag{font-size:12px;color:var(--red);font-weight:850;text-transform:uppercase;letter-spacing:.08em}
+.callout{margin-top:25px;background:linear-gradient(135deg,#fff9ea,#f1dfb7);border:1px solid var(--gold2);border-radius:23px;padding:30px}.callout h3{font:700 22px Georgia,serif;color:var(--maroon);margin:0 0 9px}
+.sales{background:var(--maroon);color:#fff2d6;border-radius:27px;padding:36px}.sales h3{font:700 25px Georgia,serif;color:#fff0ca;margin:0 0 10px}
+.salesgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}.salesbox{border:1px solid rgba(234,212,157,.3);border-radius:16px;padding:18px;background:rgba(255,255,255,.04)}.salesbox b{color:#efd291}
+.cta{background:var(--maroon);border-radius:28px;padding:42px;color:#fff2d8;display:flex;justify-content:space-between;align-items:center;gap:30px}.cta h2{color:#fff0cc;margin:0 0 8px}.cta p{color:#ead6ad;max-width:720px}
+.btn{display:inline-block;background:#efd18f;color:var(--maroon);font-weight:850;padding:13px 20px;border-radius:999px;text-decoration:none;white-space:nowrap}
+footer{text-align:center;color:var(--muted);font-size:13px;padding:30px 0 45px}.ornament{text-align:center;color:var(--gold);font-size:27px;margin-top:15px}
+@media(max-width:820px){.nav-links{display:none}.hero{padding:58px 0}.hero-grid,.grid{grid-template-columns:1fr}.photo{justify-self:start;width:min(300px,82vw)}.stats{grid-template-columns:1fr 1fr}.ventures,.salesgrid{grid-template-columns:1fr}.cta{display:block;padding:31px}.btn{margin-top:16px}}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="container navin"><div class="brand">TEAM • PROFILE</div><div class="nav-links"><a href="#profile">Profile</a><a href="#journey">Journey</a><a href="#ventures">Ventures</a><a href="#mahotsav">Mahotsav</a></div></div></nav>
+
+<header class="hero" id="profile"><div class="container hero-grid"><div>
+<div class="kicker">Entrepreneur • Infrastructure • Business • Innovation</div>
+<h1>K. Satya<br>Prasad</h1>
+<p><b>Entrepreneur, infrastructure professional and business leader</b> with a professional journey spanning infrastructure development, civil contracting, mining and crushing, digital media, creative studios, energy exploration, food ventures, technology-enabled services and social welfare.</p>
+<div class="badge">Bhagavadgita Vishwa Mahotsav–2027&nbsp; • &nbsp;Business Leadership &amp; Partnerships</div>
+</div><div class="photo"><img src="[IMAGE]" alt="K. Satya Prasad"></div></div></header>
+
+<main>
+<section class="section"><div class="container">
+<div class="eyebrow">Profile at a glance</div><h2>A diversified entrepreneur with a builder's mindset.</h2>
+<p class="lead">Satya Prasad's career began with multinational infrastructure development companies in 2004 and evolved into independent contracting, industrial ventures, digital media, technology, energy, food-related enterprise and social service.</p>
+<div class="stats"><div class="stat"><b>Since 2004</b><span>Infrastructure-sector experience</span></div><div class="stat"><b>2020</b><span>Independent civil contracting journey</span></div><div class="stat"><b>10+</b><span>Business &amp; social initiatives</span></div><div class="stat"><b>Multi-sector</b><span>Infrastructure to digital innovation</span></div></div>
+</div></section>
+
+<section class="section" id="journey"><div class="container">
+<div class="eyebrow">Professional journey</div><h2>From infrastructure to entrepreneurship.</h2>
+<div class="timeline">
+<div class="item"><h3>Infrastructure Development</h3><div class="date">Since 2004</div><p>Professional association with multinational infrastructure development companies, building a foundation in infrastructure operations and project environments.</p></div>
+<div class="item"><h3>Civil Contracting</h3><div class="date">Since 2020</div><p>Entered independent civil contracting, undertaking activities across multiple states and expanding exposure to varied markets and project requirements.</p></div>
+<div class="item"><h3>Mining &amp; Crusher Plant Operations</h3><div class="date">Entrepreneurial expansion</div><p>Established mining and crusher plant ventures in Telangana, extending into resource-based industrial operations connected with construction and infrastructure.</p></div>
+<div class="item"><h3>Digital Media &amp; Creative Production</h3><div class="date">SK Magic Creations • Wise Monkeys Media</div><p>Expanded into digital content, creative communication and online media through SK Magic Creations and the Wise Monkeys Media YouTube initiative.</p></div>
+<div class="item"><h3>Technology, Energy &amp; Consumer Ventures</h3><div class="date">Diversification</div><p>Extended entrepreneurial interests into energy exploration, food and culinary business, and technology-enabled services including the Bhiksha mobile application.</p></div>
+</div>
+</div></section>
+
+<section class="section" id="ventures"><div class="container">
+<div class="eyebrow">Entrepreneurial portfolio</div><h2>Building opportunities across sectors.</h2>
+<div class="ventures">
+<div class="venture"><div class="tag">Infrastructure</div><h3>Civil Contracting</h3><p>Independent contracting activities across various states of India.</p></div>
+<div class="venture"><div class="tag">Industrial</div><h3>Mining &amp; Crusher Plants</h3><p>Resource-based operations in Telangana supporting construction and infrastructure.</p></div>
+<div class="venture"><div class="tag">Creative</div><h3>SK Magic Creations</h3><p>Digital media and creative production venture.</p></div>
+<div class="venture"><div class="tag">Digital Media</div><h3>Wise Monkeys Media</h3><p>YouTube and content-led digital communication initiative.</p></div>
+<div class="venture"><div class="tag">Creative Studio</div><h3>Bumble Bee</h3><p>Kids miniature studio and model shoot studio in Telangana.</p></div>
+<div class="venture"><div class="tag">Energy</div><h3>Varenya Energy Technologies</h3><p>Energy exploration initiative established in Telangana.</p></div>
+<div class="venture"><div class="tag">Food</div><h3>SK Magic Recipes Pvt. Ltd.</h3><p>Food and culinary business initiative focused on Andhra Pradesh.</p></div>
+<div class="venture"><div class="tag">Technology</div><h3>Bhiksha</h3><p>Service-based mobile application reflecting an interest in practical digital solutions.</p></div>
+<div class="venture"><div class="tag">Social Service</div><h3>Mana Niswardh Seva Foundation</h3><p>Social-welfare initiative focused on organized service and community engagement.</p></div>
+<div class="venture"><div class="tag">Business</div><h3>Real Business Matrix</h3><p>Co-Founder, contributing to business development, collaboration and long-term growth opportunities.</p></div>
+</div>
+</div></section>
+
+<section class="section"><div class="container">
+<div class="eyebrow">Leadership strengths</div><h2>Initiative. Diversification. Innovation. Service.</h2>
+<div class="grid" style="margin-top:30px">
+<div class="card"><h3>Entrepreneurial Initiative</h3><p>Repeatedly identifying opportunities and turning them into ventures across different sectors and business environments.</p></div>
+<div class="card"><h3>Business Development</h3><p>Strong orientation toward new markets, strategic opportunities, partnerships and organizational growth.</p></div>
+<div class="card"><h3>Creative &amp; Digital Outlook</h3><p>Experience across digital media, creative studio services, content platforms and technology-enabled solutions.</p></div>
+<div class="card"><h3>Social Responsibility</h3><p>Extending entrepreneurial capabilities into organized social service through Mana Niswardh Seva Foundation.</p></div>
+</div>
+</div></section>
+
+<section class="section" id="mahotsav"><div class="container">
+<div class="eyebrow">Bhagavadgita Vishwa Mahotsav–2027</div><h2>Business leadership &amp; partnership perspective.</h2>
+<div class="sales"><h3>A diversified entrepreneur's network and execution mindset for a major spiritual-cultural initiative.</h3>
+<p>Satya Prasad's multi-sector entrepreneurial experience can support the Mahotsav through business relationships, strategic partnerships, opportunity development, operational coordination and long-term ecosystem building.</p>
+<div class="salesgrid"><div class="salesbox"><b>Partnerships</b><br>Building relationships across businesses, institutions, entrepreneurs and stakeholders.</div><div class="salesbox"><b>Business Development</b><br>Identifying opportunities, sponsors, collaborators and strategic growth avenues.</div><div class="salesbox"><b>Execution</b><br>Bringing an entrepreneurial, cross-sector mindset to coordination and delivery.</div></div>
+</div>
+<div class="callout"><h3>Leadership role in the team</h3><p>His profile adds an important entrepreneurial and business-development dimension to the team—connecting infrastructure experience, diversified enterprise, digital innovation and social service with the larger vision of the Mahotsav.</p></div>
+</div></section>
+
+<section class="section"><div class="container"><div class="cta"><div><div class="eyebrow" style="color:#efd394">Team leadership</div><h2>Building businesses. Creating opportunities. Serving society.</h2><p>K. Satya Prasad brings infrastructure experience, entrepreneurial initiative, digital innovation and a diversified business perspective to the team.</p></div><a class="btn" href="#profile">Back to profile ↑</a></div><div class="ornament">❈ ॐ ❈</div></div></section>
+</main>
+<footer>© 2026 Team Profile • K. Satya Prasad</footer>
+</body></html>

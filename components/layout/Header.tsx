@@ -167,54 +167,53 @@ export default function Header() {
             {navGroups.map((group) => (
 
               <div key={group.label}>
+                {group.children ? (
+                  <>
+                    <button
+                      className="flex items-center justify-between w-full py-2.5 px-2 text-ink font-sans font-medium text-sm hover:text-gold transition-colors"
+                      onClick={() =>
+                        toggleMobileAccordion(group.label)
+                      }
+                    >
+                      <span>
+                        {group.label}
+                      </span>
+                      <ChevronDown
+                        size={16}
+                        className={`transition-transform duration-200 ${
+                          mobileExpanded === group.label
+                            ? "rotate-180"
+                            : ""
+                        }`}
+                      />
+                    </button>
 
-                <button
-                  className="flex items-center justify-between w-full py-2.5 px-2 text-ink font-sans font-medium text-sm hover:text-gold transition-colors"
-                  onClick={() =>
-                    toggleMobileAccordion(group.label)
-                  }
-                >
-
-                  <span>
-                    {group.label}
-                  </span>
-
-                  <ChevronDown
-                    size={16}
-                    className={`transition-transform duration-200 ${
-                      mobileExpanded === group.label
-                        ? "rotate-180"
-                        : ""
-                    }`}
-                  />
-
-                </button>
-
-
-                {mobileExpanded === group.label &&
-                  group.children && (
-
-                    <div className="pl-4 pb-2 space-y-1 border-l-2 border-gold ml-2">
-
-                      {group.children.map((item) => (
-
-                        <Link
-                          key={item.href}
-                          href={item.href}
-                          className="block py-1.5 px-2 text-ink-muted text-sm hover:text-gold transition-colors"
-                          onClick={() =>
-                            setMobileOpen(false)
-                          }
-                        >
-                          {item.label}
-                        </Link>
-
-                      ))}
-
-                    </div>
-
-                  )}
-
+                    {mobileExpanded === group.label && (
+                      <div className="pl-4 pb-2 space-y-1 border-l-2 border-gold ml-2">
+                        {group.children.map((item) => (
+                          <Link
+                            key={item.href}
+                            href={item.href}
+                            className="block py-1.5 px-2 text-ink-muted text-sm hover:text-gold transition-colors"
+                            onClick={() =>
+                              setMobileOpen(false)
+                            }
+                          >
+                            {item.label}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </>
+                ) : (
+                  <Link
+                    href={group.href}
+                    className="flex items-center justify-between w-full py-2.5 px-2 text-ink font-sans font-medium text-sm hover:text-gold transition-colors"
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    <span>{group.label}</span>
+                  </Link>
+                )}
               </div>
 
             ))}
@@ -296,7 +295,7 @@ const dropdownImages: Record<string, string> = {
 
       <Link
         href={group.href}
-        className={`flex items-center gap-0.5 px-1.5 xl:px-2 py-1 rounded-sm text-[12px] xl:text-[13px] font-sans font-medium whitespace-nowrap transition-colors duration-200 ${
+        className={`flex items-center gap-0.5 px-1 xl:px-1.5 2xl:px-2 py-1 rounded-sm text-[11.5px] xl:text-[12px] 2xl:text-[13px] font-sans font-medium whitespace-nowrap transition-colors duration-200 ${
           active
             ? "text-gold"
             : "text-ink hover:text-gold"
